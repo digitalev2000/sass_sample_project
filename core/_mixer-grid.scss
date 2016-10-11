@@ -1,0 +1,101 @@
+@mixin makeRow() {
+  margin-left: $gridGutterWidth * -1;
+  @include clearfix();
+}
+@mixin makeColumn($columns: 1, $offset: 0) {
+  float: left;
+  margin-left: ($gridColumnWidth * $offset) + ($gridGutterWidth * ($offset - 1)) + ($gridGutterWidth * 2);
+  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+}
+
+// The Grid
+@mixin core-offset($columns, $columnWidth: $gridColumnWidth, $gutterWidth: $gridGutterWidth) {
+  margin-left: ($columnWidth * $columns) + ($gutterWidth * ($columns + 1));
+}
+
+@function -mi-core-span($columns, $columnWidth: $gridColumnWidth, $gutterWidth: $gridGutterWidth) {
+  @return ($columnWidth * $columns) + ($gutterWidth * ($columns - 1));
+}
+
+@mixin grid-core($siteWidth: $thisSiteWidth, $gutterWidth: $gridGutterWidth, $sbWidth:$sbWidthA) {
+	//remove the Sidebar and its gutter from total site width
+	$contentWidth: $siteWidth;
+	@if $sbWidth != null {
+		$contentWidth: $siteWidth - ($sbWidth+$gridGutterWidth);
+	}
+	//calculate column width based on remainer
+	$gridColumnWidth: ($contentWidth - (($gridColumns - 1) * $gutterWidth)) / $gridColumns;
+	.row {
+	margin-left: $gutterWidth * -1;
+	@include clearfix();
+	clear:both;
+	}
+	
+	[class*="span"], .sidebar {
+	float: left;
+	margin-left: $gutterWidth;
+	}
+
+	//Set Sidebar Width
+	.sidebar {
+		width:$sbWidth;
+		&.alpha { 
+			margin-right: $gutterWidth;
+		}
+		&.omega {
+			margin-left: $gutterWidth;
+		}
+		
+	}
+	
+	// generate .spanX and .offsetX, and, if desired, nested skin widths
+	$i: $gridColumns;
+	@while $i > 0 {
+		.span#{$i} {
+			width: -mi-core-span($i, $gridColumnWidth, $gutterWidth); //.spanX width
+			@if $nested-skins != null{
+				.row > .skin {
+					$x: $gridColumns;
+					@while $x > 0 {
+						.span#{$x} {
+							@if $i > $x {
+							$outer-width: -mi-core-span($i, $gridColumnWidth, $gutterWidth);
+							$skin-gutters:strip-units($skin-gutter)*($gridColumns - 1);
+							$all-extra: $skin-gutters + ($skin-padding*2);
+							$one-col: ($outer-width - $all-extra)/$gridColumns;
+							z-index: $all-extra;
+							width:($one-col*$x)+($skin-gutter*($x - 1)); //.spanX .row > .skin .spanX width 
+							}
+						}
+					$x: $x - 1;
+					}
+				}
+				@if $skin-padding != $s02-padding and $s02-padding != null {
+					.row > .s-02 {
+						
+					}
+				}
+			}
+		}
+		$i: $i - 1;
+	}
+	
+	$i: $gridColumns;
+	@while $i > 0 {
+		.offset#{$i} { @include core-offset($i, $gridColumnWidth, $gutterWidth); }
+		$i: $i - 1;
+	}
+	
+	.row > .skin {
+		margin-left:$gridGutterWidth;
+		[class*="span"] { //The first content-area has no left margin
+			float: left;
+			margin-left:0;
+			margin-top:0;
+		}
+		[class*="span"] + [class*="span"] {//The rest have a left margin of skinGutter
+			margin-left:$skin-gutter;
+		}
+	}
+	
+}

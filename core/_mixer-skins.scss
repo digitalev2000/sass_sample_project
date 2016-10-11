@@ -1,0 +1,127 @@
+@mixin skinStyles(
+$skin-args:$skin-args,
+$skin-header-args:$skin-header-args,
+$skin-h2-args:$skin-h2-args,
+$skin-nav-args:$skin-nav-args,
+$skin-nav-clear:$skin-nav-clear,
+$skin-nav-float-direction:$skin-nav-float-direction,
+$skin-nav-link-spacing:$skin-nav-link-spacing,
+$skin-nav-link-link-colors:$skin-nav-link-link-colors,
+$skin-nav-link-text-dec:$skin-nav-link-text-dec,
+$skin-nav-link-hover-text-dec:$skin-nav-link-hover-text-dec,
+$skin-nav-footer-float-direction:$skin-nav-footer-float-direction,
+$skin-nav-footer-link-spacing:$skin-nav-footer-link-spacing,
+$skin-nav-footer-link-link-colors:$skin-nav-footer-link-link-colors,
+$skin-nav-footer-link-text-dec:$skin-nav-footer-link-text-dec,
+$skin-nav-footer-link-hover-text-dec:$skin-nav-footer-link-hover-text-dec,
+$skin-content-args:$skin-content-args) {
+  @include clearfix;
+  @include allAttr($skin-args...);
+  header {
+	@include allAttr($skin-header-args...);  	
+    &.inset {
+    margin:0;
+    padding:0;
+      img {
+        display: block;
+      }
+    }
+    h2 {
+	    @include allAttr($skin-h2-args...);
+    }
+  }
+  //-------Close Header
+  nav {
+    @include clear-element($skin-nav-clear);
+    @include allAttr($skin-nav-args...);
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      overflow: hidden;
+      float: $skin-nav-float-direction;
+      li {
+        float: left;
+        margin-right: $skin-nav-link-spacing;
+        a{
+	        @include linkAttr($link-colors:$skin-nav-link-link-colors,$text-decoration:$skin-nav-link-text-dec,$hover-text-decoration:$skin-nav-link-hover-text-dec);
+        }
+      }
+      li + li {
+        border-left: 1px solid nth($skin-nav-link-link-colors, 1);
+        padding-left: $skin-nav-link-spacing;
+      }
+    }
+    &.footlinks {
+      ul {
+        float: $skin-nav-footer-float-direction;
+      }
+      li {
+        float: left;
+        margin-right: $skin-nav-footer-link-spacing;
+        a {
+	        @include linkAttr($link-colors:$skin-nav-footer-link-link-colors,$text-decoration:$skin-nav-footer-link-text-dec,$hover-text-decoration:$skin-nav-footer-link-hover-text-dec);
+        }
+      }
+      li + li {
+        border-left: 1px solid nth($skin-nav-footer-link-link-colors, 1);
+        margin-right: $skin-nav-footer-link-spacing;
+      }
+    }
+  }
+  .skin-content {
+	  @include allAttr($skin-content-args...);
+  }
+}
+
+//----------End Skin Mixin
+
+%skin {
+	@include skinStyles;
+}
+.s01{
+  @extend %skin;
+}
+//default control styles 
+.s01-alt {
+  @extend %skin;
+	@include skinStyles($skin-args:$s01alt-args,
+$skin-header-args:$s01alt-header-args,
+$skin-h2-args:$s01alt-h2-args,
+$skin-nav-clear:$s01alt-nav-clear,
+$skin-nav-float-direction:$s01alt-nav-float-direction,
+$skin-nav-link-spacing:$s01alt-nav-link-spacing,
+$skin-nav-link-link-colors:$s01alt-nav-link-link-colors,
+$skin-nav-link-text-dec:$s01alt-nav-link-text-dec,
+$skin-nav-link-hover-text-dec:$s01alt-nav-link-hover-text-dec,
+$skin-nav-footer-float-direction:$s01alt-nav-footer-float-direction,
+$skin-nav-footer-link-spacing:$s01alt-nav-footer-link-spacing,
+$skin-nav-footer-link-link-colors:$s01alt-nav-footer-link-link-colors,
+$skin-nav-footer-link-text-dec:$s01alt-nav-footer-link-text-dec,
+$skin-nav-footer-link-hover-text-dec:$s01alt-nav-footer-link-hover-text-dec,
+$skin-content-args:$s01alt-content-args);
+}
+.s02{
+  @extend %skin;
+	@include skinStyles($skin-args:$s02-args,
+$skin-header-args:$s02-header-args,
+$skin-h2-args:$s02-h2-args,
+$skin-nav-args:$s02-nav-args,
+$skin-nav-clear:$s02-nav-clear,
+$skin-nav-float-direction:$s02-nav-float-direction,
+$skin-nav-link-spacing:$s02-nav-link-spacing,
+$skin-nav-link-link-colors:$s02-nav-link-link-colors,
+$skin-nav-link-text-dec:$s02-nav-link-text-dec,
+$skin-nav-link-hover-text-dec:$s02-nav-link-hover-text-dec,
+$skin-nav-footer-float-direction:$s02-nav-footer-float-direction,
+$skin-nav-footer-link-spacing:$s02-nav-footer-link-spacing,
+$skin-nav-footer-link-link-colors:$s02-nav-footer-link-link-colors,
+$skin-nav-footer-link-text-dec:$s02-nav-footer-link-text-dec,
+$skin-nav-footer-link-hover-text-dec:$s02-nav-footer-link-hover-text-dec,
+$skin-content-args:$s02-content-args);
+}
+
+
+.skin + .skin {
+ margin-top: nth($content-area-margin,1);
+}

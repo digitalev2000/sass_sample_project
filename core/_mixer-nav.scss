@@ -1,0 +1,175 @@
+@mixin nav-type ($type) {
+	@if $type == centered {
+		> li {
+			width:floor($nav-width/$nav-items);
+		}
+	}
+	@if $type == padded {
+		> li {
+			> a {
+				padding: $nav-item-padding;
+			}
+		}
+	}
+}
+
+
+.navigation-menu {
+  position: relative;
+  @include no-bullets;
+  @include nav-type ($nav-type);
+  > li {
+    > a {
+      display: block;
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  &.nav-horizontal {
+    > li {
+      text-align: center;
+      float: left;
+    }
+    > li.reverse ul {
+      left: auto;
+      right: 0;
+    }
+    > li.reverse li ul {
+      right: 100%;
+    }
+    li:hover > ul {
+    	text-align: left;
+    	top: 100%;
+    	@include opacity(100);
+    }
+  }
+  &.nav-vertical {
+    width:200px;
+  li {
+    width:200px;
+  }
+	li:hover > ul {
+    	text-align: left;
+    	top: 0%;
+    	left: 100%;
+    	@include opacity(100);
+    }
+  }
+  li {
+    position: relative;
+  }
+  > li {
+    font-size: 1em;
+    margin-left: 0;
+    &.nav-active > a {}
+  }
+  ul {
+    padding:0;
+    position: absolute;
+    z-index: $zindexDropdown;
+    @include opacity(0);
+    top: -9999px;
+    left: 0;
+    li {
+      text-align: left;
+      .sub-indicator {
+        font-size: 1.8em;
+        height: 1em;
+        line-height: 1;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        margin-top: -0.5em;
+        opacity: 0.7;
+      }
+      a {
+        display: block;
+      }
+    }
+    ul {
+      left: 100%;
+      font-size: 1em;
+      //makes sure that sub-sub-menu text is same size as parent
+   
+    }
+  }
+
+  li li:hover > ul{
+    top: 0%;
+    left: 100%;
+  }
+}
+//Skin aspects only
+#sitenav {
+	@include allAttr($nav-cnt-args...);
+	height: $nav-cnt-height;
+  #topnav {
+    &.nav-horizontal{
+      height: $nav-horiz-height;
+    }  
+  	z-index: $nav-z-index;
+  	@include allAttr($nav-args...);
+  	width:$nav-width;
+  	float:$nav-float;
+    padding: 0;
+    > li {
+    	@include blockAttr($nav-item-args...);
+      > a {
+      	padding: $nav-item-link-padding;
+      	margin: $nav-item-link-margin;
+      	@include linkAttr($link-colors:$nav-item-link-link-colors,$text-decoration:$nav-item-link-text-dec,$hover-text-decoration:$nav-item-link-hover-text-dec);
+      	line-height: $nav-item-link-line-height;
+      	border-left: $nav-item-link-border-left;
+      	
+      	&:hover {
+          @include bgType($nav-item-hover-args...)
+        }
+      }
+      &.first > a {
+	      border:none;
+      }
+    }
+    ul {
+    	width: $dropdown-width;
+    	@include allAttr($dropdown-args...);
+      @include transition(opacity 300ms);
+      li {
+      	@include blockAttr($dropdown-item-args...);
+        a {
+        padding: $dropdown-item-link-padding;
+      	@include linkAttr($link-colors:$dropdown-item-link-link-colors,$text-decoration:$dropdown-item-link-text-dec,$hover-text-decoration:$dropdown-item-link-hover-text-dec);
+          &:hover {
+          @include bgType($dropdown-item-hover-args...)
+        }
+        }
+      }
+    }
+  }
+	
+}
+
+.secondary, #sitenav #secondary{
+	height:$secondary-height;
+	width:$secondary-width;
+	float:$secondary-float;
+	position: $secondary-position;
+	top:$secondary-top;
+	left:$secondary-left;
+	right:$secondary-right;
+	bottom:$secondary-bottom;
+	@include allAttr($secondary-args...);
+	> li {
+	@include blockAttr($secondary-item-args...);
+		> a {
+		padding: $secondary-item-link-padding;
+		@include linkAttr($link-colors:$secondary-item-link-link-colors,$text-decoration:$secondary-item-link-text-dec,$hover-text-decoration:$secondary-item-link-hover-text-dec);
+			&:hover {
+				@include bgType($secondary-item-hover-args...)
+			}
+		}
+	}
+}

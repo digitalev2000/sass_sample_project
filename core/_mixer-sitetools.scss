@@ -1,0 +1,382 @@
+$blue:#0269b0;
+$green:#1f803e;
+$ltBlue: white;//lighten($blue, 58%);
+$white60: rgba(255,255,255,.6);
+$global-shadow: -1px 1px 2px rgba(0, 0, 0, .1);
+$palette-shadow: -1px 1px 6px rgba(0, 0, 0, .351);
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+@mixin boxRows($height:60px, $width: 60px, $margin-right: $width/4,  $margin-bot: $height/2){
+	float:left;
+	margin: 0 $margin-right $margin-bot 0;
+	width: $width;
+	height: $height; 
+}
+
+body.slide {
+	margin-left: -510px;
+}
+
+.hidden {
+	display: none;
+}
+
+
+//!BUTTONS
+%otherButton {
+	@include border-radius(12px);
+	@include box-shadow($global-shadow);
+	$buttonColorLt:#eee;
+	$buttonColorDk:#999;
+	@include bgType(vgrad, $buttonColorLt, $buttonColorDk);
+	display: inline-block;
+	padding: .5em 1em .55em;
+	color:#454545;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: $global-shadow;
+	cursor: pointer;
+	@include clearfix;
+	clear:both;
+	&:hover {
+		@include bgType(vgrad, darken($buttonColorLt,4%), darken($buttonColorDk,5%));
+	}
+}
+
+#sidebarSwitcher, #layoutOverlay, #typoInfo {
+	@extend %otherButton;
+	max-width: 130px;
+	border: 1px solid #aaa;
+	margin-left: 10px
+}
+.ad {
+	position: relative;
+	display: inline-block;
+	&:hover .close {
+		display: block;
+	}
+	.close {
+			display: none;
+			position: absolute;
+			top: -4px;
+			right: -4px;
+			background: black;
+			color: white;
+			height: 20px;
+			width: 20px;
+			font-size: 16px;
+			font-weight: bold;
+			@include border-radius(30px);
+			cursor: pointer;
+			&:after {
+				content: "x";
+				display: block;
+
+				font-family: "Open Sans",Helvetica,sans-serif;
+				text-align: center;
+				margin: -3px 0 0;
+			}
+	}
+}
+
+
+//!SITE TOOLS
+.siteTools {
+	font-family: 'Open Sans', Helvetica, sans-serif!important;
+	font-size: 14px;
+	overflow: auto;
+	@include clearfix;
+	position: fixed;
+	top:0px;
+	right:0px;
+	z-index: 99999;
+	width: 510px;
+	height:100%;
+	color:black;
+	//display: none;
+	p {
+		margin: 0 10px;
+		font-size:16px;
+		font-weight: bold;
+	}
+	h2, .palette {
+		@include adjust-font-size-to(24px);
+		//@include leader(.5);
+		padding: 0 10px;
+		color:#555;
+		font-weight: bold;
+		letter-spacing: -.05em;
+	}
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style-position: inside;
+		> li {
+			clear: both;
+			margin: 10px 0;
+		}
+	}
+	.step2 {
+		overflow: scroll;
+		max-height: 300px;
+		background: #ddd;
+		ul {
+			
+			list-style: none;
+			padding:0;
+			font-size: 11px;
+			li {
+				h6 {
+					margin: 0;
+					font-size: 13px;
+				}
+				.selected {
+					border:3px solid $blue;
+				}
+				width:100px;
+				// height: 150px;
+				// overflow: hidden;
+				float: left;
+				clear: none;
+				word-break: break-all;
+				// word-wrap: break-word;
+				margin: 0 5px 0;
+			}
+			li:nth-child(3n+1) {
+				clear:both;
+			}
+		}
+	}
+	.tags,.size {
+		display: block;
+	}
+	.label {font-weight: bold;}
+	.crop {
+		width: 100px;
+		max-height: 120px;
+		overflow: hidden;
+		border:3px solid transparent;
+		img{
+			width: 100px;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+	input[type=text]{
+		width: 90%;
+		margin: 20px auto;
+		display: block;
+	}
+	//JQUI
+	&.ui-tabs {
+		.ui-tabs-panel {
+	    padding: 0 0 0 10px;
+	    background: $ltBlue;
+	  }
+	  &.ui-tabs-vertical {
+	    padding: 0;
+	    .ui-widget-header {
+	      border: none;
+	    }
+	    .ui-tabs-nav {
+	      float: left;
+	      width: 100px;
+	      li {
+	        clear: left;
+	        width: 100%;
+	        margin: 0.2em 0;
+	        overflow: hidden;
+	        position: relative;
+	        right: -2px;
+	        z-index: 2;
+	        font-size: .9em;
+	        border-radius: 6px 0 0 6px;
+	        background: $blue;
+	        a {
+	          display: block;
+	          width: 100%;
+	          padding: 0.6em 1em;
+	          color: white;
+	          &:hover {
+	            cursor: pointer;
+	          }
+	        }
+	        &.ui-tabs-active {
+	          margin-bottom: 0.2em;
+	          padding-bottom: 0;
+	          background:$ltBlue;
+	          a {
+	          	color:$blue;
+	          }
+	        }
+	        &:last-child {
+	          margin-bottom: 10px;
+	        }
+	      }
+	    }
+	    .ui-tabs-panel {
+	      float: left;
+	      width: 385px;
+	      border-radius: 0;
+	      position: relative;
+	      left: 2px;
+	      min-height: 600px
+	    }
+  }
+}
+
+	//!PALETTE
+	.palette {
+		@include clearfix;
+		clear: both;
+		
+		.key {clear:both;@include clearfix;}
+		li{
+			@include boxRows($margin-right: 40px,  $margin-bot: 40px);
+			margin-top:30px;
+			@include box-shadow($palette-shadow);
+			position: relative;
+			//border: 4px solid white;
+			&:after,&:before{
+				position: absolute;
+				color: black;
+				font-size: 14px;
+				left:0;
+			}
+			&:after{
+					bottom: -30px;
+					margin-top: 10px;
+			}
+			&:before{
+					top: -30px;
+					margin-bottom: 10px;
+			}
+			&.key:after{
+					bottom: -18px;
+			
+			}
+			&.key:before{
+					top: -10px;
+		
+			}
+		}
+	@each $context in siteColor1 $siteColor1, siteColor1var1 $siteColor1var1, siteColor1var2 $siteColor1var2, siteColor1var3 $siteColor1var3, siteColor1var4 $siteColor1var4, siteColor2 $siteColor2, siteColor2var1 $siteColor2var1, siteColor2var2 $siteColor2var2, siteColor2var3 $siteColor2var3, siteColor2var4 $siteColor2var4, siteColor3 $siteColor3, siteColor3var1 $siteColor3var1,  siteColor3var2 $siteColor3var2, siteColor3var3 $siteColor3var3,  siteColor3var4 $siteColor3var4 {
+	   .#{nth($context, 1)} {
+	     background: nth($context, 2);
+		     &:after{
+			     content:"#{nth($context, 2)}";
+
+		     }
+		     &:before{
+			     content:"#{nth($context, 1)}";
+
+		     }
+		  }
+	    } // Color Pallette
+		@include no-bullets;
+	   }	
+}
+
+.add-to-dom {
+	@extend %otherButton;
+	width:80%;
+	margin: 0 auto;
+	font-size: 1.2em;
+	display: block;
+}
+
+//!OVERLAYS
+
+.overlayColor {
+	@include bgType(vgrad,lighten($blue,.3),$blue);
+	@include opacity(70);
+	@include transition(opacity ease 200ms);
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 99;
+	width:100%;
+	height: 100%;
+	&:hover{
+		@include opacity(100);
+	}
+	span, a {
+		@include adjust-font-size-to(42px);
+		display: block;
+		color:white;
+		text-align: center;
+		font-weight: bold;
+		&:hover{
+			color:fade-in(white,.1);
+		}
+	}
+}
+
+.sidebar .overlayColor {
+	@include bgType(vgrad,lighten($green,30%),$green);
+	text-align: center;
+}
+
+.relPos {
+	position: relative;
+	min-height: 100px;
+	.btnGo {
+	}
+}
+
+.relPos.sidebar {
+	min-height: 600px;
+}
+
+.changeSpan {margin:20px auto 0;width: 50%;
+
+	.btnGo {
+		@extend %otherButton;
+		font-size: 12px;
+		clear:both;
+		@include clearfix;
+		width: 90px
+	}
+}
+
+.tooltip {
+	position: relative;
+	span {
+		//background: white;
+		/*margin: 0 0 0 22px;
+		position: relative;
+		&:after {
+		   position: absolute;
+			top: 1px;
+			left: -20px;
+			display: block;
+			width: 0;
+			border-width: 12px 20px 12px 0;
+			border-style: solid;
+			border-color: transparent white;
+			content: "";
+			z-index: 1000;
+		} 
+*/
+	}
+}

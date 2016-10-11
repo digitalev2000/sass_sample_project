@@ -1,0 +1,522 @@
+//----------------------------------
+// Site Color Palette
+//----------------------------------
+
+$siteColor1:#dc4242;// Main Color Scheme
+
+$siteColor1var1:darken(saturate($siteColor1,70%),10%);
+
+$siteColor1var2:darken(saturate($siteColor1,10%),40%); // Lighten or Darken the color scheme Left = Top & Right = Bottom
+
+$siteColor1var3:darken(saturate($siteColor1,15%),30%);
+
+$siteColor2:#000; // Footer link colors
+
+$siteColor2var1:darken($siteColor2,10%);
+
+$siteColor2var2:darken($siteColor2,85%);
+
+//----------------------------------
+// Grid Desktop Default
+//----------------------------------
+
+$thisSiteWidth:980px;
+
+$sbWidthA: 300px;
+
+$gridColumns: 12;
+
+$gridGutterWidth: 15px; // Content Spacing !!!
+
+$sitePadding: $gridGutterWidth;
+
+$site-width-padded: $thisSiteWidth + ($sitePadding*2);
+
+// Nested Skins - do you want them?
+//If so, how much space between them?
+$skin-gutter: $sitePadding/2;
+
+//----------------------------------
+// Global
+//----------------------------------
+
+$googleFont:'Cabin', sans-serif; // Main Font
+
+$base-font-size: 16px;
+
+$base-font-family: $googleFont;
+
+$base-font-weight: 200;
+
+$base-line-height: 20px;
+
+$base-color: #333;
+
+$headings-font-size: 2em;
+
+$headings-font-family: $googleFont;
+
+$headings-font-weight: 600;
+
+//links
+$base-link-colors: $siteColor1var2, $siteColor1var3;
+
+$base-link-text-dec: none;
+
+$base-hover-text-dec: underline;
+
+$base-transition-properties: color;
+
+$base-transition-duration: 200ms;
+
+//----------------------------------
+// Scaffolding
+//----------------------------------
+
+$body-color: $base-color;
+
+$body-font-size: $base-font-size;
+
+$body-font-family: 'Cabin', sans-serif;
+
+$body-line-height: $base-line-height;
+
+$body-margin:0;
+
+$body-padding:0;
+
+$body-bgArgs: solid, #f8f8f8 url("../../Pics/bg/KGY_Bodybg_02.png") repeat-x center -1px;
+
+
+//------------------------------
+// Site Header - #siteheader
+//------------------------------
+
+$siteheader-margin:0;
+
+$siteheader-height:auto;
+
+$siteheader-padding:0;
+
+$siteheader-bgArgs: solid, url("../../Pics/bg/KGY_headerbg_02.png") repeat-x center top;
+
+//!#siteheader .container
+$siteheader-cnt-margin:0 auto;
+
+$siteheader-cnt-bgArgs:solid, url("../../Pics/bg/KGY_mastheadbg_02_02.png") no-repeat center top;
+
+$header-logo-margin:40px 0px;
+
+
+//------------------------------
+// Site Content - #sitecontent
+//------------------------------
+
+$sitecontent-bgArgs:solid, url("../../Pics/bg/KGY_Contentbg_05.png") no-repeat center top;
+
+$sitecontent-cnt-margin:0 auto;
+
+$sitecontent-cnt-padding:5px $sitePadding $sitePadding; // Content Spacing to make room for ads !!!
+
+$sitecontent-cnt-bgArgs:solid, white; // Content Background-color
+
+$content-area-margin:$sitePadding 0 0;
+
+
+//------------------------------
+// Site Footer - #sitefooter
+//------------------------------
+
+$sitefooter-color: #000000;
+
+$sitefooter-height: 276px;
+
+$sitefooter-text-align: none;
+
+$sitefooter-bgArgs:solid, url("../../Pics/bg/KGY_Footerbg_03.png") repeat-x center top; // Footer Background-color 
+
+$sitefooter-link-colors:$sitefooter-color, $sitefooter-color;
+
+$sitefooter-overflow: hidden;
+
+$sitefooter-cnt-margin:0 auto ;
+
+$sitefooter-cnt-bgArgs: solid, url("../../Pics/bg/KGY_footer_Centerbg_05.png") no-repeat center top;
+
+$sitefooter-cnt-height: 276px;
+
+$sitefooter-cnt-padding:20px 0 0;
+
+$sitefooter-logo-float:left;
+
+
+//------------------------------
+// Site Footer Linklist - .linklist
+//------------------------------
+
+$sitefooter-linklist-float:left;
+
+$sitefooter-linklist-width: 628px;
+
+$sitefooter-linklist-font-family: 'Cabin', sans-serif;
+
+$sitefooter-linklist-font-weight:500;
+
+$sitefooter-linklist-text-transform: uppercase;
+
+$sitefooter-linklist-clear:none;
+
+$sitefooter-linklist-item: inline;
+
+$sitefooter-linklist-text-align:left;
+
+$sitefooter-linklist-padding: 10px 2px;
+
+$sitefooter-linklist-link-hover-pad: 5px;
+
+$sitefooter-linklist-margin: 2px auto;
+
+$sitefooter-linklist-style:none;
+
+$sitefooter-linklist-color: #ffffff;
+
+$sitefooter-linklist-font-size: 0.98em;
+
+$sitefooter-linklist-link-link-colors:#ffffff, #ffffff;
+
+$sitefooter-linklist-link-border-radius:3px;
+
+$sitefooter-linklist-link-hover-text-dec:none;
+
+$sitefooter-linklist-link-hover: #9abb17;
+
+$sitefooter-linklist-hover-text-dec:none;
+
+
+//------------------------------
+// Site Footer Copyright - .copyright_2
+//------------------------------
+$sitefooter-copyright-opacity: 70;
+
+$sitefooter-copyright-float: left;
+
+$sitefooter-copyright-clear: both;
+
+$sitefooter-copyright-font-style: italic;
+
+$sitefooter-mi-margin:0 0 0 -4px;
+
+
+//----------------------------------
+// Top Navigation Container - #sitenav
+//----------------------------------
+$zindexDropdown: 30000;
+
+$nav-bgArgs:solid, #9ec015;
+
+$nav-cnt-font-family: 'Cabin', sans-serif;
+
+$nav-cnt-height:50px;
+
+$nav-cnt-color: #ffffff;
+
+$nav-cnt-font-weight: 800;
+
+$nav-cnt-text-transform: uppercase;
+
+$nav-cnt-font-size: 1.1em;
+
+$nav-cnt-link-colors:$nav-cnt-color, #85007a;
+
+$nav-type: padded;
+
+$nav-font-family: $nav-cnt-font-family;
+
+$nav-margin:0 auto;
+
+$nav-padding:0;
+
+
+//----------------------------------
+// Top Navigation Links - #sitenav #topnav > li 
+//----------------------------------
+
+$nav-link-colors:$nav-cnt-color, $nav-cnt-color;
+
+//set a height if nav is horizontal
+$nav-horiz-height: $nav-cnt-height;
+
+$nav-item-margin:0;
+
+$nav-item-padding:0;
+
+//!ul > li > a
+$nav-item-link-padding: 0 28px;
+
+$nav-item-link-margin:null;
+
+$nav-item-link-line-height:$nav-cnt-height;
+
+$nav-item-link-text-dec:none;
+
+$nav-item-link-hover-text-dec:none;
+
+// These items makes the Hover states stay in place
+$nav-item-hover-bgArgs: solid, #64276e;
+
+$nav-item-hover-bgArg-list-item: #64276e;
+
+
+//----------------------------------
+// Top Navigation Dropdown - #sitenav #topnav ul 
+//----------------------------------
+
+$dropdown-color: #ffffff;
+
+$dropdown-width: 200px; // Drop Sizing
+
+$dropdown-text-shadow: none;
+
+$dropdown-font-weight: normal;
+
+$dropdown-font-size: 15px;
+
+$dropdown-font-family: $base-font-family;
+
+$dropdown-bgArgs:solid, #64276e; // Dropdown background color
+
+$dropdown-text-transform: none;
+
+$dropdown-padding:0px 0px $sitePadding;
+
+
+//------------------------------
+// Dropdown Links - .navigation-menu ul li a
+//------------------------------
+
+$dropdown-item-link-padding:5px 5px 5px 18px;
+
+$dropdown-line-height: 180%;
+ 
+$dropdown-item-link-text-dec:none;
+
+$dropdown-item-link-hover-text-dec:none;
+
+$dropdown-item-link-link-colors:#ffffff, #64276e;
+
+$dropdown-item-hover-bgArgs:solid, #ffffff;
+
+
+//----------------------------------
+// Skin Titles - .title
+//----------------------------------
+$title-color: #3c3c3c; //Skin 01 Title
+
+$title-font-size: 1.6em;
+
+$title-font-weight: 400;
+
+$title-line-height: 120%;
+
+$title-margin: 0 0 10px;
+
+$title-link-colors:$title-color,$title-color;
+
+
+//----------------------------------
+// Skin Subtitle- .subtitle
+//----------------------------------
+$subtitle-color: #515151;
+
+$subtitle-font-weight: 100;
+
+$subtitle-font-size: 1.223em;//14.6px
+
+$subtitle-margin: -10px 0 -2px;
+
+$teaserlist-title-font-size:1.385em;//18px;
+
+$teaserlist-subtitle-font-size:1.1em;//14px;
+
+
+//----------------------------------
+// Skin Dim Tag - .dim
+//----------------------------------
+$dim-color: #91979d;
+
+
+//----------------------------------
+// Skin Readmore Tag - .readMore
+//----------------------------------
+$readmore-font-weight: bold;
+
+$readmore-bgArgs: solid, #e51b24;
+
+$readmore-font-size: 1.1546875125469998em;//11px
+
+$readmore-text-transform: lowercase;
+
+
+//----------------------------------
+// Skin BgTitle Barar - .bgTitleBar
+//----------------------------------
+
+$bgtitlebar-bgArgs:solid, none;
+
+$bgtitlebar-border-top:1px solid #d9dbde;
+
+$bgtitlebar-border-bottom:1px solid #d9dbde;
+
+$bgtitlebar-border-left: none;
+
+$bgtitlebar-border-right: none;
+
+$bgtitlebar-border-radius: 0px;
+
+$bgtitlebar-padding: 10px 0px;
+
+
+//----------------------------------
+// Skin Button Bar Tag - .btnBar
+//----------------------------------
+$btnbar-border-top: 1px #d5dae0 solid;
+
+$btnbar-border-right:$btnbar-border-top;
+
+$btnbar-border-bottom:$btnbar-border-top;
+
+$btnbar-border-left:$btnbar-border-top;
+
+$btnbar-border-radius: 5px;
+
+$btnbar-padding: 12px;
+
+$btnbar-bgArgs:solid, none;
+
+
+//----------------------------------
+// Skin Row Even - .rowEven
+//----------------------------------
+$row-even-bgArgs:solid,none;
+
+$row-even-border-bottom: 1px #d5dae0 solid;
+
+$row-even-padding: 10px 0px 10px;
+
+$row-even-margin:5px 0;
+
+
+//----------------------------------
+// Skin Row Odd - .rowOdd
+//----------------------------------
+$row-odd-bgArgs:solid, none;
+
+$row-odd-border-radius: 1px;
+
+$row-odd-border-top: none;
+
+$row-odd-border-bottom: none;
+
+$row-odd-border-left: none;
+
+$row-odd-border-right: none;
+
+$row-odd-margin: 0px 0px 10px;
+
+$row-odd-padding: 10px 0px 10px;
+ 
+
+//----------------------------------
+// Skin 01 - .skin
+//----------------------------------
+$skin-padding: 1em;
+
+$skin-bgArgs:solid, white;
+
+$skin-header-margin:-1em -1em 0;
+
+$skin-header-padding:.5em 1em;
+
+$skin-header-bgArgs:solid, #9DBF15 url("../../Pics/bg/0ed2f06f.png") repeat center top;
+
+$skin-h2-color: #ffffff;
+
+$skin-h2-font-family: 'Helvetica', sans-serif;
+
+$skin-h2-font-weight: 400;
+
+$skin-h2-font-size: 1.575em;//21px
+
+$skin-h2-padding:0;
+
+$skin-h2-margin: 0px 0px 0px 0px;
+
+$skin-h2-text-transform: capitalize;
+
+$skin-h2-link-colors:$skin-h2-color,$skin-h2-color;
+
+$skin-nav-clear: both;
+
+$skin-nav-color:#464646;
+
+$skin-link-colors: #662770, #2A0E30;
+
+$skin-nav-float-direction:none;
+
+$skin-nav-font-weight: bold;
+
+$skin-nav-font-size: 0.769em;//10px
+
+$skin-nav-margin:.5em 0 10px;
+
+$skin-nav-link-link-colors:#515151;
+
+$skin-nav-link-spacing: .5em;
+
+$skin-nav-footer-float-direction: none;
+
+$skin-content-margin: 0px 0px;
+
+$skin-content-padding: 0 0;
+
+//----------------------------------
+// Skin 01 ALT - .s01alt
+//----------------------------------
+
+$s01alt-padding:1em;
+
+$s01alt-margin: 0px 0px;
+
+$s01alt-header-bgArgs:solid, #461B4D url("../../Pics/bg/3f63d0f3.png") repeat center top;
+
+$s01alt-h2-margin: 0px 0px 0px 0px;
+
+
+//----------------------------------
+// Skin 02 - .s02
+//----------------------------------
+
+$s02-color: #000000;
+
+$s02-padding:1em;
+
+$s02-bgArgs:solid, #ffffff;
+
+$s02-border-left:1px #C4D93F solid;
+
+$s02-border-bottom:$s02-border-left;
+
+$s02-border-right:$s02-border-left;
+
+$s02-border-top:$s02-border-left;
+
+$s02-header-bgArgs: solid, none;
+
+$s02-h2-color: #662770;
+
+$s02-h2-margin: 0 0 0 0px;
+
+//----------------------------------
+// Event bg color
+//----------------------------------
+$event-bG-color: #df312e;

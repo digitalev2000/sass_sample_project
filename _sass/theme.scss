@@ -1,0 +1,362 @@
+//Main Font
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,700,500,600");
+
+//compass utilities
+@import "compass";
+@import "mixer-reset";
+@import "mixer-constants.scss";
+
+@import "variables_mysite.scss"; // Your site specific variables -- should precede defaults
+
+//---------MI MIXER imports
+@import "mixer-defaults";
+@import "mixer-mixins";
+@import "mixer-blocks";
+@import "mixer-grid";
+@import "mixer-scaffolding";
+@import "mixer-nav";
+@import "mixer-controls";
+@import "mixer-skins";
+
+
+//Custom code can be placed here.
+
+//----------------------------------
+// Header Styles
+//----------------------------------
+
+    .header_cnt_ad {
+    display: block;
+    height: 90px;
+    width: 1000px;
+    text-align: center;  
+    img {margin: 0 auto; position: relative; top: 10px}
+    }
+
+    .header_ad {
+    display: block;
+    height: 86px;
+    margin: 16px auto;
+    width: 760px;
+    }
+
+    #masthead {
+    width: $thisSiteWidth + 30px;
+    clear: both;
+    display: block;
+    height: 206px;
+    margin:0px auto 0;
+    }
+
+    .masthead-cnt-left {   
+    float: left;
+    height: 170px;
+    width: 222px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+
+    }
+
+    .masthead-cnt-center {
+    display: block;
+    height: 128px;
+    left: -30px;
+    margin: 0 auto;
+    position: relative;
+    top: 60px;
+    width: 260px;
+    }
+
+    .masthead-cnt-right {
+    float: right;
+    height: 168px;
+    left: -12px;
+    margin-bottom: -108px;
+    position: relative;
+    top: -82px;;
+    width: 360px;    
+
+    ul {
+    left: 130px;
+    position: relative;
+    top: 66px;
+    }
+
+    ul li {display: inline;}
+    }
+
+    .masthead_right_logo {
+    float: right;
+    position: relative;;
+    top:-110px;
+    left: 6px;
+    }
+
+    .listen_live {
+    left: 50px;
+    position: relative;
+    top: -8px;
+    }
+
+    .phone_img {
+    left: -74px;
+    position: absolute;
+    top: -32px;
+    }
+
+//----------------------------------
+// Footer Styles
+//----------------------------------
+    .footer_ad{
+    display: block;
+    height: 134px;
+    position: relative;
+    text-align: center;
+    top: -20px;
+    width: 1010px;
+
+    img {margin: 0 auto; position: relative; top: 20px; width: 768px; display: block}
+
+    }
+
+    .copyright{ 
+    display: none!important;
+    }
+
+    .copyright_2 {
+    clear: both;
+    color: white;
+    display: block;
+    font-size: 13px;
+    margin: 5px auto;
+    position: relative;
+    top: 8px;
+    width: 272px;
+
+    .ei_logo > img {
+    left: -20px;
+    position: relative;
+    }
+
+    }
+
+    .footer_logo{
+    position: relative;
+    top:60px;
+    margin: 0px 20px;  
+    float:left;
+    left: 20px;
+    }
+
+
+//----------------------------------
+// Now Playing Styles
+//----------------------------------
+
+    [id*="divnowplaying"] {
+   cursor: pointer;
+    margin-left: 580px;
+    overflow: hidden;
+    position: absolute;
+    top: 168px;
+    }
+
+
+//----------------------------------
+// Header Member Status 
+//----------------------------------
+    #siteheader .memberStatus {
+    margin-left: 688px;
+    position: absolute;
+    top: -2px;
+    background-color: none;
+    border-radius: 0px;
+    padding: 0px;
+    }
+
+    #siteheader  [id*="divMemberAuthenticated"] {
+    font-size: 14px!important;
+    width: 164px!important;
+    }
+
+    #siteheader [id*="divMemberAuthenticated"] a {
+    color: $event-bG-color!important;
+    }
+
+//----------------------------------
+// Sidebar Member Status 
+//----------------------------------
+    .memberStatus {
+    font-size: 18px;
+    margin: 10px auto;
+    width: 258px;
+
+    .lnkSignup > a {
+    background-color: #461b4d;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px;
+    }
+
+   .lnkLogin > a {
+    background-color: #461b4d;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px;
+    }
+
+    #sidebar1 [id*="divMemberAuthenticated"] .lnkProfile  a, .span4 [id*="divMemberAuthenticated"] .lnkLogout  a {
+    color: $event-bG-color!important;
+    }
+
+    }
+
+//----------------------------------
+// Sidebar On Air Styles
+//----------------------------------  
+    .onairnow {
+    margin-bottom: 15px;
+
+    h2 {
+    font-size: 28px;
+    color:#662770;
+    }
+
+    div {
+    font-size: 20px;
+    line-height: 212%;
+    }
+
+    }
+
+
+//----------------------------------
+// Header On Air Styles
+//----------------------------------  
+      #siteheader  .onairnow
+        {
+        margin: 0 auto 0 338px;
+        position: absolute;
+        top: 74px;
+
+        tr {
+        float: left;
+        width: 118px;
+        }   
+
+        h2 {
+        background: #c4d93f none repeat scroll 0 0;
+        border-radius: 4px;
+        color: #62206f;
+        display: inline;
+        float: right;
+        font-size: 24px;
+        padding: 4px;
+        width: 194px;
+
+        a {
+        color: #62206f;
+        }
+        
+        }
+
+        div {
+        color: #fff;
+        font-family: "Cabin",sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        }
+
+        }
+
+//----------------------------------
+// Events Control Styles
+//----------------------------------
+
+        .evt-title, .evtDTitle > span,  .evtDesc-add a, .event-details-page .evtDDesc-col.evtDesc-add .evtVDTitle a, a.vnuVDWebsite {
+        color: $event-bG-color!important;
+        }
+
+         .evt-date-info, .date-dash, .evt-date-info-to, li.evtDDateLI, li.evtDDateLI-to, .event-details-page .event-details-info ul li.evtDDateLI, .event-home-teaser .event-teaser .event-cal-head ul li.active1 a, .event-home-teaser .event-teaser .event-cal-head ul li:hover a, .event-home-teaser .event-teaser .event-cal-head ul li:hover a, .event-home-teaser .event-teaser .event-cal-body ul li .event-obj .event-obj-col1 .date-info, .event-home-teaser .event-teaser .event-cal-body ul li .event-obj .event-obj-col1 .image-clip-holder, .event-home-teaser .event-teaser .event-cal-body ul li .event-obj .event-obj-col1 .date-info-to  {
+            background-color:$event-bG-color!important;
+        }
+
+        .event-obj-col2 .location 
+        {
+        color: #000000!important
+        }
+
+        .date-dash {
+         margin: 0 6px!important;
+        }
+
+        .contextualIcons.horizontal 
+        {
+        float: right;
+        }
+
+        .event-details-page {
+        font-size: $base-font-size!important;
+        margin-top: $base-font-size!important;
+        }
+
+        .image-clip-holder {
+        width: 30px!important;
+        }
+
+        .event-list-teaser .event-teaser .event-cal-nopic ul li .event-obj .event-obj-col1 .evt-date-info .date-m, .event-list-teaser .event-teaser .event-cal-nopic ul li .event-obj .event-obj-col1 .evt-date-info-to .date-m  {
+        margin: -2px !important;
+        }
+
+        .feedsV2 .feeds-article .sharedCommenting .btnBar .actionButtons a.actComment,.feedsV2 .feeds-article .sharedCommenting .btnBar .actionButtons a.actLike {
+        background: $event-bG-color!important
+        }
+
+//----------------------------------
+// Read More Styles
+//----------------------------------
+        .s01 .readMore, .s01-alt .readMore, .s02 .readMore  {
+        text-transform:lowercase;
+        font-weight: 800;
+        color: #662770
+    }
+
+        .s01 .readMore a, .s01-alt .readMore a, .s02 .readMore a{
+        color:#662770;
+        text-transform:lowercase;
+        font-weight: 800;
+        }
+
+        .s01 .readMore a:hover, .s01-alt .readMore a:hover, .s02 .readMore a:hover{     
+        color:#2A0E30!important;    
+        }
+
+        .s01 .readMore:hover, .s01-alt .readMore:hover, .s02 .readMore:hover{ 
+        color:#2A0E30!important;
+        }
+
+        .readMore:before, .readMore:after
+        {
+        display: block; 
+        margin: 10px 0 10px;
+        }
+
+//----------------------------------
+// Poll Styles
+//----------------------------------
+        .jsRotator {
+        margin-bottom: $sitePadding;
+        } 
+
+//----------------------------------
+// Poll Styles
+//----------------------------------
+
+        .polls, .instantPoll {
+        margin-top: $sitePadding;
+        }
+
+        .instantPoll input {
+        top: 6px!important;
+        }

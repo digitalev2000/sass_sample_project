@@ -1,0 +1,1871 @@
+// ---- NOTES
+//[Meagan 03.27.13 10:09 AM] Patched podcasts '.container' class collision in 'scaffolding' and in 'controls.' Renamed skin classes to remove unneeded dashes and simplify skinning.
+
+//----------------------------------
+//!Site Color Palette
+//----------------------------------
+
+$siteColor1:#000!default;
+$siteColor1var1:#000!default;
+$siteColor1var2:#000!default;
+$siteColor1var3:#000!default;
+$siteColor1var4:#000!default;
+
+$siteColor2:#000!default;
+$siteColor2var1:#000!default;
+$siteColor2var2:#000!default;
+$siteColor2var3:#000!default;
+$siteColor2var4:#000!default;
+
+$siteColor3:#000!default;
+$siteColor3var1:#000!default;
+$siteColor3var2:#000!default;
+$siteColor3var3:#000!default;
+$siteColor3var4:#000!default;
+
+$white: white;
+$black: black;
+
+//----------------------------------
+//!Grid
+//----------------------------------
+
+//Desktop Default
+
+$thisSiteWidth:960px!default;
+$sbWidthA: null!default;
+$sbWidthB: null!default;
+$gridColumns: 12!default;
+$gridGutterWidth: 20px!default;
+$sitePadding: $gridGutterWidth!default;
+$site-width-padded: $thisSiteWidth + ($sitePadding*2);
+
+// Nested Skins - do you want them?
+$nested-skins: null!default;
+//If so, how much space between them?
+$skin-gutter: $sitePadding/2!default;
+
+//----------------------------------
+//!Global
+//----------------------------------
+
+$base-color: black!default;
+$base-letter-spacing: null!default;
+$base-font-size: 13px!default;
+$base-font-family: Helvetica, Arial, sans-serif!default;
+$base-line-height: 18px!default;
+
+//headings
+$headings-color: null!default;
+$headings-text-transform: null!default;
+$headings-text-shadow: null!default;
+$headings-letter-spacing: null!default;
+$headings-font-weight: null!default;
+$headings-font-style: null!default;
+$headings-font-variant: null!default;
+$headings-font-size: 2.769em!default;//36px based on 13px base
+$headings-font-family: Helvetica, Arial, sans-serif!default;
+$headings-line-height: null!default;
+
+//links
+$base-link-colors: null!default;
+$base-link-text-dec: none!default;
+$base-hover-text-dec: underline!default;
+
+//link transitions
+$base-transition-properties: color!default;
+$base-transition-duration: 200ms!default;
+
+//----------------------------------
+//!Scaffolding
+//----------------------------------
+
+$body-color: $base-color;
+$body-text-align: null!default;
+$body-text-transform: null!default;
+$body-text-shadow: null!default;
+$body-letter-spacing: null!default;
+$body-font-weight: null!default;
+$body-font-style: null!default;
+$body-font-variant: null!default;
+$body-font-size: $base-font-size!default;
+$body-font-family: $base-font-family!default;
+$body-line-height: $base-line-height!default;
+$body-margin:0!default;
+$body-padding:0!default;
+$body-border-top:null!default;
+$body-border-right:null!default;
+$body-border-bottom:null!default;
+$body-border-left:null!default;
+$body-bgArgs:null!default;
+
+$body-args: $body-color,$body-text-align,$body-text-transform,$body-text-shadow,$body-letter-spacing,$body-font-weight,$body-font-style,$body-font-variant,$body-font-size,$body-font-family,$body-line-height,$body-margin,$body-padding,$body-border-top,$body-border-right,$body-border-bottom,$body-border-left,null,$body-bgArgs,null,$base-link-colors,$base-link-text-dec,$base-hover-text-dec;
+
+//!#siteheader
+
+$siteheader-color: null!default;
+$siteheader-text-align: null!default;
+$siteheader-text-transform: null!default;
+$siteheader-text-shadow: null!default;
+$siteheader-letter-spacing: null!default;
+$siteheader-font-weight: null!default;
+$siteheader-font-style: null!default;
+$siteheader-font-variant: null!default;
+$siteheader-font-size: null!default;
+$siteheader-font-family: null!default;
+$siteheader-line-height: null!default;
+$siteheader-margin:0!default;
+$siteheader-padding:0!default;
+$siteheader-border-top:null!default;
+$siteheader-border-right:null!default;
+$siteheader-border-bottom:null!default;
+$siteheader-border-left:null!default;
+$siteheader-bgArgs:null!default;
+$siteheader-box-shadow:null!default;
+$siteheader-link-colors:null!default;
+$siteheader-text-dec:null!default;
+$siteheader-hover-text-dec:null!default;
+
+$siteheader-args: $siteheader-color,$siteheader-text-align,$siteheader-text-transform,$siteheader-text-shadow,$siteheader-letter-spacing,$siteheader-font-weight,$siteheader-font-style,$siteheader-font-variant,$siteheader-font-size,$siteheader-font-family,$siteheader-line-height,$siteheader-margin,$siteheader-padding,$siteheader-border-top,$siteheader-border-right,$siteheader-border-bottom,$siteheader-border-left,/*border-radius*/null,$siteheader-bgArgs,$siteheader-box-shadow,$siteheader-link-colors,$siteheader-text-dec,$siteheader-hover-text-dec;
+
+//!#siteheader .container
+
+$siteheader-cnt-color: null!default;
+$siteheader-cnt-text-align: null!default;
+$siteheader-cnt-text-transform: null!default;
+$siteheader-cnt-text-shadow: null!default;
+$siteheader-cnt-letter-spacing: null!default;
+$siteheader-cnt-font-weight: null!default;
+$siteheader-cnt-font-style: null!default;
+$siteheader-cnt-font-variant: null!default;
+$siteheader-cnt-font-size: null!default;
+$siteheader-cnt-font-family: null!default;
+$siteheader-cnt-line-height: null!default;
+$siteheader-cnt-margin:0 auto!default;
+$siteheader-cnt-padding:null!default;
+$siteheader-cnt-border-top:null!default;
+$siteheader-cnt-border-right:null!default;
+$siteheader-cnt-border-bottom:null!default;
+$siteheader-cnt-border-left:null!default;
+$siteheader-cnt-border-radius:null!default;
+$siteheader-cnt-bgArgs:null!default;
+$siteheader-cnt-box-shadow:null!default;
+
+$siteheader-cnt-args: $siteheader-cnt-color,$siteheader-cnt-text-align,$siteheader-cnt-text-transform,$siteheader-cnt-text-shadow,$siteheader-cnt-letter-spacing,$siteheader-cnt-font-weight,$siteheader-cnt-font-style,$siteheader-cnt-font-variant,$siteheader-cnt-font-size,$siteheader-cnt-font-family,$siteheader-cnt-line-height,$siteheader-cnt-margin,$siteheader-cnt-padding,$siteheader-cnt-border-top,$siteheader-cnt-border-right,$siteheader-cnt-border-bottom,$siteheader-cnt-border-left,$siteheader-cnt-border-radius,$siteheader-cnt-bgArgs,$siteheader-cnt-box-shadow;
+
+//!#siteheader .container .masthead .logo
+
+$header-logo-margin:null!default;
+$header-logo-padding:null!default;
+$header-logo-border-top:null!default;
+$header-logo-border-right:null!default;
+$header-logo-border-bottom:null!default;
+$header-logo-border-left:null!default;
+$header-logo-border-radius:null!default;
+$header-logo-bgArgs:null!default;
+$header-logo-box-shadow:null!default;
+
+$header-logo-display: null;
+$header-logo-float: null;
+
+$header-logo-args:$header-logo-margin,$header-logo-padding,$header-logo-border-top,$header-logo-border-right,$header-logo-border-bottom,$header-logo-border-left,$header-logo-border-radius,$header-logo-bgArgs,$header-logo-box-shadow;
+
+//!#sitecontent 
+
+$sitecontent-color: null!default;
+$sitecontent-text-align: null!default;
+$sitecontent-text-transform: null!default;
+$sitecontent-text-shadow: null!default;
+$sitecontent-letter-spacing: null!default;
+$sitecontent-font-weight: null!default;
+$sitecontent-font-style: null!default;
+$sitecontent-font-variant: null!default;
+$sitecontent-font-size: null!default;
+$sitecontent-font-family: null!default;
+$sitecontent-line-height: null!default;
+$sitecontent-margin:null!default;
+$sitecontent-padding:null!default;
+$sitecontent-border-top:null!default;
+$sitecontent-border-right:null!default;
+$sitecontent-border-bottom:null!default;
+$sitecontent-border-left:null!default;
+$sitecontent-border-radius:null!default;
+$sitecontent-bgArgs:null!default;
+
+$sitecontent-box-shadow:null!default;
+$sitecontent-args: $sitecontent-color,$sitecontent-text-align,$sitecontent-text-transform,$sitecontent-text-shadow,$sitecontent-letter-spacing,$sitecontent-font-weight,$sitecontent-font-style,$sitecontent-font-variant,$sitecontent-font-size,$sitecontent-font-family,$sitecontent-line-height,$sitecontent-margin,$sitecontent-padding,$sitecontent-border-top,$sitecontent-border-right,$sitecontent-border-bottom,$sitecontent-border-left,$sitecontent-border-radius,$sitecontent-bgArgs,$sitecontent-box-shadow;
+
+//!#sitecontent .container
+
+$sitecontent-cnt-color: null!default;
+$sitecontent-cnt-text-align: null!default;
+$sitecontent-cnt-text-transform: null!default;
+$sitecontent-cnt-text-shadow: null!default;
+$sitecontent-cnt-letter-spacing: null!default;
+$sitecontent-cnt-font-weight: null!default;
+$sitecontent-cnt-font-style: null!default;
+$sitecontent-cnt-font-variant: null!default;
+$sitecontent-cnt-font-size: null!default;
+$sitecontent-cnt-font-family: null!default;
+$sitecontent-cnt-line-height: null!default;
+$sitecontent-cnt-margin:0 auto!default;
+$sitecontent-cnt-padding:0 $sitePadding $sitePadding!default;
+$sitecontent-cnt-border-top:null!default;
+$sitecontent-cnt-border-right:null!default;
+$sitecontent-cnt-border-bottom:null!default;
+$sitecontent-cnt-border-left:null!default;
+$sitecontent-cnt-border-radius:null!default;
+$sitecontent-cnt-bgArgs:null!default;
+$sitecontent-cnt-box-shadow:null!default;
+
+$sitecontent-cnt-box-shadow:null!default;
+$sitecontent-cnt-args: $sitecontent-cnt-color,$sitecontent-cnt-text-align,$sitecontent-cnt-text-transform,$sitecontent-cnt-text-shadow,$sitecontent-cnt-letter-spacing,$sitecontent-cnt-font-weight,$sitecontent-cnt-font-style,$sitecontent-cnt-font-variant,$sitecontent-cnt-font-size,$sitecontent-cnt-font-family,$sitecontent-cnt-line-height,$sitecontent-cnt-margin,$sitecontent-cnt-padding,$sitecontent-cnt-border-top,$sitecontent-cnt-border-right,$sitecontent-cnt-border-bottom,$sitecontent-cnt-border-left,$sitecontent-cnt-border-radius,$sitecontent-cnt-bgArgs,$sitecontent-cnt-box-shadow;
+
+$sidebar-margin:null!default;
+$sidebar-padding:null!default;
+$sidebar-border-top:null!default;
+$sidebar-border-right:null!default;
+$sidebar-border-bottom:null!default;
+$sidebar-border-left:null!default;
+$sidebar-border-radius:null!default;
+$sidebar-bgArgs:null!default;
+
+$sidebar-box-shadow:null!default;
+$sidebar-args:$sidebar-margin,$sidebar-padding,$sidebar-border-top,$sidebar-border-right,$sidebar-border-bottom,$sidebar-border-left,$sidebar-border-radius,$sidebar-bgArgs,$sidebar-box-shadow;
+
+$content-area-margin:$sitePadding 0 0!default;
+$content-area-padding:null!default;
+$content-area-border-top:null!default;
+$content-area-border-right:null!default;
+$content-area-border-bottom:null!default;
+$content-area-border-left:null!default;
+$content-area-border-radius:null!default;
+$content-area-bgArgs:null!default;
+
+$content-area-box-shadow:null!default;
+$content-area-args:$content-area-margin,$content-area-padding,$content-area-border-top,$content-area-border-right,$content-area-border-bottom,$content-area-border-left,$content-area-border-radius,$content-area-bgArgs,$content-area-box-shadow;
+
+$main-margin:null!default;
+$main-padding:null!default;
+$main-border-top:null!default;
+$main-border-right:null!default;
+$main-border-bottom:null!default;
+$main-border-left:null!default;
+$main-border-radius:null!default;
+$main-bgArgs:null!default;
+
+$main-box-shadow:null!default;
+$main-args:$main-margin,$main-padding,$main-border-top,$main-border-right,$main-border-bottom,$main-border-left,$main-border-radius,$main-bgArgs,$main-box-shadow;
+
+$sitefooter-color: null!default;
+$sitefooter-text-align: null!default;
+$sitefooter-text-transform: null!default;
+$sitefooter-text-shadow: null!default;
+$sitefooter-letter-spacing: null!default;
+$sitefooter-font-weight: null!default;
+$sitefooter-font-style: null!default;
+$sitefooter-font-variant: null!default;
+$sitefooter-font-size: null!default;
+$sitefooter-font-family: null!default;
+$sitefooter-line-height: null!default;
+$sitefooter-margin:null!default;
+$sitefooter-padding:null!default;
+$sitefooter-border-top:null!default;
+$sitefooter-border-right:null!default;
+$sitefooter-border-bottom:null!default;
+$sitefooter-border-left:null!default;
+$sitefooter-border-radius:null!default;
+$sitefooter-bgArgs:null!default;
+$sitefooter-box-shadow:null!default;
+$sitefooter-link-colors:null!default;
+$sitefooter-text-dec:null!default;
+$sitefooter-hover-text-dec:null!default;
+
+$sitefooter-args: $sitefooter-color,$sitefooter-text-align,$sitefooter-text-transform,$sitefooter-text-shadow,$sitefooter-letter-spacing,$sitefooter-font-weight,$sitefooter-font-style,$sitefooter-font-variant,$sitefooter-font-size,$sitefooter-font-family,$sitefooter-line-height,$sitefooter-margin,$sitefooter-padding,$sitefooter-border-top,$sitefooter-border-right,$sitefooter-border-bottom,$sitefooter-border-left,$sitefooter-border-radius,$sitefooter-bgArgs,$sitefooter-box-shadow,$sitefooter-link-colors,$sitefooter-text-dec,$sitefooter-hover-text-dec;
+
+$sitefooter-overflow: hidden!default;
+
+//Site footer Container
+
+$sitefooter-cnt-color: null!default;
+$sitefooter-cnt-text-align: null!default;
+$sitefooter-cnt-text-transform: null!default;
+$sitefooter-cnt-text-shadow: null!default;
+$sitefooter-cnt-letter-spacing: null!default;
+$sitefooter-cnt-font-weight: null!default;
+$sitefooter-cnt-font-style: null!default;
+$sitefooter-cnt-font-variant: null!default;
+$sitefooter-cnt-font-size: null!default;
+$sitefooter-cnt-font-family: null!default;
+$sitefooter-cnt-line-height: null!default;
+$sitefooter-cnt-margin:0 auto!default;
+$sitefooter-cnt-padding:null!default;
+$sitefooter-cnt-border-top:null!default;
+$sitefooter-cnt-border-right:null!default;
+$sitefooter-cnt-border-bottom:null!default;
+$sitefooter-cnt-border-left:null!default;
+$sitefooter-cnt-border-radius:null!default;
+$sitefooter-cnt-bgArgs:null!default;
+
+$sitefooter-cnt-box-shadow:null!default;
+$sitefooter-cnt-args: $sitefooter-cnt-color,$sitefooter-cnt-text-align,$sitefooter-cnt-text-transform,$sitefooter-cnt-text-shadow,$sitefooter-cnt-letter-spacing,$sitefooter-cnt-font-weight,$sitefooter-cnt-font-style,$sitefooter-cnt-font-variant,$sitefooter-cnt-font-size,$sitefooter-cnt-font-family,$sitefooter-cnt-line-height,$sitefooter-cnt-margin,$sitefooter-cnt-padding,$sitefooter-cnt-border-top,$sitefooter-cnt-border-right,$sitefooter-cnt-border-bottom,$sitefooter-cnt-border-left,$sitefooter-cnt-border-radius,$sitefooter-cnt-bgArgs,$sitefooter-cnt-box-shadow;
+
+
+
+//! Footer HR
+
+$sitefooter-hr-margin:null!default;
+$sitefooter-hr-padding:null!default;
+$sitefooter-hr-border-top:null!default;
+$sitefooter-hr-border-right:null!default;
+$sitefooter-hr-border-bottom:null!default;
+$sitefooter-hr-border-left:null!default;
+$sitefooter-hr-border-radius:null!default;
+$sitefooter-hr-bgArgs:null!default;
+$sitefooter-hr-box-shadow:null!default;
+$sitefooter-hr-args:$sitefooter-hr-margin,$sitefooter-hr-padding,$sitefooter-hr-border-top,$sitefooter-hr-border-right,$sitefooter-hr-border-bottom,$sitefooter-hr-border-left,$sitefooter-hr-border-radius,$sitefooter-hr-bgArgs,$sitefooter-hr-box-shadow;
+
+//! Site footer logo
+
+$sitefooter-logo-margin:null!default;
+$sitefooter-logo-padding:null!default;
+$sitefooter-logo-border-top:null!default;
+$sitefooter-logo-border-right:null!default;
+$sitefooter-logo-border-bottom:null!default;
+$sitefooter-logo-border-left:null!default;
+$sitefooter-logo-border-radius:null!default;
+$sitefooter-logo-bgArgs:null!default;
+$sitefooter-logo-box-shadow:null!default;
+$sitefooter-logo-args:$sitefooter-logo-margin,$sitefooter-logo-padding,$sitefooter-logo-border-top,$sitefooter-logo-border-right,$sitefooter-logo-border-bottom,$sitefooter-logo-border-left,$sitefooter-logo-border-radius,$sitefooter-logo-bgArgs,$sitefooter-logo-box-shadow;
+
+$sitefooter-logo-float:null!default;
+
+//!#sitefooter .container ul.link-list
+
+$sitefooter-linklist-style:null!default;
+
+$sitefooter-linklist-color: null!default;
+$sitefooter-linklist-text-align: null!default;
+$sitefooter-linklist-text-transform: null!default;
+$sitefooter-linklist-text-shadow: null!default;
+$sitefooter-linklist-letter-spacing: null!default;
+$sitefooter-linklist-font-weight: null!default;
+$sitefooter-linklist-font-style: null!default;
+$sitefooter-linklist-font-variant: null!default;
+$sitefooter-linklist-font-size: null!default;
+$sitefooter-linklist-font-family: null!default;
+$sitefooter-linklist-line-height: null!default;
+$sitefooter-linklist-margin:null!default;
+$sitefooter-linklist-padding:null!default;
+$sitefooter-linklist-border-top:null!default;
+$sitefooter-linklist-border-right:null!default;
+$sitefooter-linklist-border-bottom:null!default;
+$sitefooter-linklist-border-left:null!default;
+$sitefooter-linklist-border-radius:null!default;
+$sitefooter-linklist-bgArgs:null!default;
+$sitefooter-linklist-box-shadow:null!default;
+$sitefooter-linklist-link-colors:null!default;
+$sitefooter-linklist-text-dec:null!default;
+$sitefooter-linklist-hover-text-dec:null!default;
+
+$sitefooter-linklist-args: $sitefooter-linklist-color,$sitefooter-linklist-text-align,$sitefooter-linklist-text-transform,$sitefooter-linklist-text-shadow,$sitefooter-linklist-letter-spacing,$sitefooter-linklist-font-weight,$sitefooter-linklist-font-style,$sitefooter-linklist-font-variant,$sitefooter-linklist-font-size,$sitefooter-linklist-font-family,$sitefooter-linklist-line-height,$sitefooter-linklist-margin,$sitefooter-linklist-padding,$sitefooter-linklist-border-top,$sitefooter-linklist-border-right,$sitefooter-linklist-border-bottom,$sitefooter-linklist-border-left,$sitefooter-linklist-border-radius,$sitefooter-linklist-bgArgs,$sitefooter-linklist-box-shadow,$sitefooter-linklist-link-colors,$sitefooter-linklist-text-dec,$sitefooter-linklist-hover-text-dec;
+
+$sitefooter-linklist-width:null!default;
+$sitefooter-linklist-float:null!default;
+
+$sitefooter-linklist-item-margin:null!default;
+$sitefooter-linklist-item-padding:null!default;
+$sitefooter-linklist-item-border-top:null!default;
+$sitefooter-linklist-item-border-right:null!default;
+$sitefooter-linklist-item-border-bottom:null!default;
+$sitefooter-linklist-item-border-left:null!default;
+$sitefooter-linklist-item-border-radius:null!default;
+$sitefooter-linklist-item-bgArgs:null!default;
+$sitefooter-linklist-item-box-shadow:null!default;
+$sitefooter-linklist-item-args:$sitefooter-linklist-item-margin,$sitefooter-linklist-item-padding,$sitefooter-linklist-item-border-top,$sitefooter-linklist-item-border-right,$sitefooter-linklist-item-border-bottom,$sitefooter-linklist-item-border-left,$sitefooter-linklist-item-border-radius,$sitefooter-linklist-item-bgArgs,$sitefooter-linklist-item-box-shadow;
+
+$sitefooter-linklist-link-margin:null!default;
+$sitefooter-linklist-link-padding:null!default;
+$sitefooter-linklist-link-border-top:null!default;
+$sitefooter-linklist-link-border-right:null!default;
+$sitefooter-linklist-link-border-bottom:null!default;
+$sitefooter-linklist-link-border-left:null!default;
+$sitefooter-linklist-link-border-radius:null!default;
+$sitefooter-linklist-link-bgArgs:null!default;
+$sitefooter-linklist-link-box-shadow:null!default;
+$sitefooter-linklist-link-args:$sitefooter-linklist-link-margin,$sitefooter-linklist-link-padding,$sitefooter-linklist-link-border-top,$sitefooter-linklist-link-border-right,$sitefooter-linklist-link-border-bottom,$sitefooter-linklist-link-border-left,$sitefooter-linklist-link-border-radius,$sitefooter-linklist-link-bgArgs,$sitefooter-linklist-link-box-shadow;
+
+$sitefooter-linklist-link-link-colors:null!default;
+$sitefooter-linklist-link-text-dec:null!default;
+$sitefooter-linklist-link-hover-text-dec:null!default;
+
+
+//! Social Icons
+
+$sitefooter-social-margin:null!default;
+$sitefooter-social-padding:null!default;
+$sitefooter-social-border-top:null!default;
+$sitefooter-social-border-right:null!default;
+$sitefooter-social-border-bottom:null!default;
+$sitefooter-social-border-left:null!default;
+$sitefooter-social-border-radius:null!default;
+$sitefooter-social-bgArgs:null!default;
+$sitefooter-social-box-shadow:null!default;
+$sitefooter-social-args:$sitefooter-social-margin,$sitefooter-social-padding,$sitefooter-social-border-top,$sitefooter-social-border-right,$sitefooter-social-border-bottom,$sitefooter-social-border-left,$sitefooter-social-border-radius,$sitefooter-social-bgArgs,$sitefooter-social-box-shadow;
+
+$sitefooter-social-float:null!default;
+
+//Copyright
+
+$sitefooter-copyright-opacity: .5!default;
+$sitefooter-copyright-float: null!default;
+
+$sitefooter-copyright-color: null!default;
+$sitefooter-copyright-text-align: null!default;
+$sitefooter-copyright-text-transform: null!default;
+$sitefooter-copyright-text-shadow: null!default;
+$sitefooter-copyright-letter-spacing: null!default;
+$sitefooter-copyright-font-weight: null!default;
+$sitefooter-copyright-font-style: null!default;
+$sitefooter-copyright-font-variant: null!default;
+$sitefooter-copyright-font-size: null!default;
+$sitefooter-copyright-font-family: null!default;
+$sitefooter-copyright-line-height: null!default;
+$sitefooter-copyright-margin:null!default;
+$sitefooter-copyright-padding:null!default;
+$sitefooter-copyright-border-top:null!default;
+$sitefooter-copyright-border-right:null!default;
+$sitefooter-copyright-border-bottom:null!default;
+$sitefooter-copyright-border-left:null!default;
+$sitefooter-copyright-border-radius:null!default;
+$sitefooter-copyright-bgArgs:null!default;
+$sitefooter-copyright-box-shadow:null!default;
+$sitefooter-copyright-link-colors:null!default;
+$sitefooter-copyright-text-dec:null!default;
+$sitefooter-copyright-hover-text-dec:null!default;
+
+$sitefooter-copyright-args: $sitefooter-copyright-color,$sitefooter-copyright-text-align,$sitefooter-copyright-text-transform,$sitefooter-copyright-text-shadow,$sitefooter-copyright-letter-spacing,$sitefooter-copyright-font-weight,$sitefooter-copyright-font-style,$sitefooter-copyright-font-variant,$sitefooter-copyright-font-size,$sitefooter-copyright-font-family,$sitefooter-copyright-line-height,$sitefooter-copyright-margin,$sitefooter-copyright-padding,$sitefooter-copyright-border-top,$sitefooter-copyright-border-right,$sitefooter-copyright-border-bottom,$sitefooter-copyright-border-left,$sitefooter-copyright-border-radius,$sitefooter-copyright-bgArgs,$sitefooter-copyright-box-shadow,$sitefooter-copyright-link-colors,$sitefooter-copyright-text-dec,$sitefooter-copyright-hover-text-dec;
+
+//MI / Basestation logo
+
+$sitefooter-mi-margin:null!default;
+$sitefooter-mi-padding:null!default;
+$sitefooter-mi-border-top:null!default;
+$sitefooter-mi-border-right:null!default;
+$sitefooter-mi-border-bottom:null!default;
+$sitefooter-mi-border-left:null!default;
+$sitefooter-mi-border-radius:null!default;
+$sitefooter-mi-bgArgs:null!default;
+$sitefooter-mi-box-shadow:null!default;
+$sitefooter-mi-args:$sitefooter-mi-margin,$sitefooter-mi-padding,$sitefooter-mi-border-top,$sitefooter-mi-border-right,$sitefooter-mi-border-bottom,$sitefooter-mi-border-left,$sitefooter-mi-border-radius,$sitefooter-mi-bgArgs,$sitefooter-mi-box-shadow;
+
+
+$sitefooter-mi-float:null!default;
+
+
+//----------------------------------
+//!Navigation
+//----------------------------------
+
+$zindexDropdown: 10000!default;
+
+//!#sitenav - container element
+$nav-cnt-width:null!default;
+$nav-cnt-height:null!default;
+
+$nav-cnt-color: null!default;
+$nav-cnt-text-align: null!default;
+$nav-cnt-text-transform: null!default;
+$nav-cnt-text-shadow: null!default;
+$nav-cnt-letter-spacing: null!default;
+$nav-cnt-font-weight: null!default;
+$nav-cnt-font-style: null!default;
+$nav-cnt-font-variant: null!default;
+$nav-cnt-font-size: null!default;
+$nav-cnt-font-family: null!default;
+$nav-cnt-line-height: null!default;
+$nav-cnt-margin:null!default;
+$nav-cnt-padding:null!default;
+$nav-cnt-border-top:null!default;
+$nav-cnt-border-right:null!default;
+$nav-cnt-border-bottom:null!default;
+$nav-cnt-border-left:null!default;
+$nav-cnt-border-radius:null!default;
+$nav-cnt-bgArgs:null!default;
+$nav-cnt-box-shadow:null!default;
+$nav-cnt-link-colors:null!default;
+$nav-cnt-text-dec:null!default;
+$nav-cnt-hover-text-dec:null!default;
+
+$nav-cnt-args: $nav-cnt-color,$nav-cnt-text-align,$nav-cnt-text-transform,$nav-cnt-text-shadow,$nav-cnt-letter-spacing,$nav-cnt-font-weight,$nav-cnt-font-style,$nav-cnt-font-variant,$nav-cnt-font-size,$nav-cnt-font-family,$nav-cnt-line-height,$nav-cnt-margin,$nav-cnt-padding,$nav-cnt-border-top,$nav-cnt-border-right,$nav-cnt-border-bottom,$nav-cnt-border-left,$nav-cnt-border-radius,$nav-cnt-bgArgs,$nav-cnt-box-shadow,$nav-cnt-link-colors,$nav-cnt-text-dec,$nav-cnt-hover-text-dec;
+
+
+$nav-items: null!default;
+$nav-type: null!default;
+
+//!ul
+$nav-width:null!default;
+$nav-float:null!default;
+
+$nav-z-index: null!default;
+$nav-width:null!default;
+$nav-color: null!default;
+$nav-text-align: null!default;
+$nav-text-transform: null!default;
+$nav-text-shadow: null!default;
+$nav-letter-spacing: null!default;
+$nav-font-weight: null!default;
+$nav-font-style: null!default;
+$nav-font-variant: null!default;
+$nav-font-size: null!default;
+$nav-font-family: null!default;
+$nav-line-height: null!default;
+$nav-margin:null!default;
+$nav-padding:null!default;
+$nav-border-top:null!default;
+$nav-border-right:null!default;
+$nav-border-bottom:null!default;
+$nav-border-left:null!default;
+$nav-border-radius:null!default;
+$nav-bgArgs:null!default;
+
+$nav-box-shadow:null!default;
+$nav-link-colors:$nav-color,$nav-color!default;
+$nav-text-dec:null!default;
+$nav-hover-text-dec:null!default;
+
+$nav-args: $nav-color,$nav-text-align,$nav-text-transform,$nav-text-shadow,$nav-letter-spacing,$nav-font-weight,$nav-font-style,$nav-font-variant,$nav-font-size,$nav-font-family,$nav-line-height,$nav-margin,$nav-padding,$nav-border-top,$nav-border-right,$nav-border-bottom,$nav-border-left,$nav-border-radius,$nav-bgArgs,$nav-box-shadow,$nav-link-colors,$nav-text-dec,$nav-hover-text-dec;
+
+	//set a height if nav is horizontal
+	$nav-horiz-height: null!default;
+//!ul > li
+$nav-item-margin:0!default;
+$nav-item-padding:0!default;
+$nav-item-border-top:null!default;
+$nav-item-border-right:null!default;
+$nav-item-border-bottom:null!default;
+$nav-item-border-left:null!default;
+$nav-item-border-radius:null!default;
+$nav-item-bgArgs:null!default;
+$nav-item-box-shadow:null!default;
+$nav-item-args:$nav-item-margin,$nav-item-padding,$nav-item-border-top,$nav-item-border-right,$nav-item-border-bottom,$nav-item-border-left,$nav-item-border-radius,$nav-item-bgArgs,$nav-item-box-shadow;
+
+//!ul > li > a
+$nav-item-link-padding:null!default;
+$nav-item-link-margin:null!default;
+$nav-item-link-line-height:null!default;
+$nav-item-link-link-colors:null!default;
+$nav-item-link-text-dec:none!default;
+$nav-item-link-hover-text-dec:none!default;
+$nav-item-link-border-left:null!default;//Divider
+
+//!ul > li > a:hover
+$nav-item-hover-bgArgs:null!default;
+
+$nav-item-hover-args: $nav-item-hover-bgArgs;
+
+//!ul li ul - dropdown
+
+$dropdown-width: 200px!default;
+$dropdown-color: null!default;
+$dropdown-text-align: null!default;
+$dropdown-text-transform: null!default;
+$dropdown-text-shadow: null!default;
+$dropdown-letter-spacing: null!default;
+$dropdown-font-weight: null!default;
+$dropdown-font-style: null!default;
+$dropdown-font-variant: null!default;
+$dropdown-font-size: null!default;
+$dropdown-font-family: null!default;
+$dropdown-line-height: null!default;
+$dropdown-margin:null!default;
+$dropdown-padding:null!default;
+$dropdown-border-top:null!default;
+$dropdown-border-right:null!default;
+$dropdown-border-bottom:null!default;
+$dropdown-border-left:null!default;
+$dropdown-border-radius:null!default;
+$dropdown-bgArgs:null!default;
+$dropdown-box-shadow:null!default;
+$dropdown-link-colors:null!default;
+$dropdown-text-dec:null!default;
+$dropdown-hover-text-dec:null!default;
+
+$dropdown-args: $dropdown-color,$dropdown-text-align,$dropdown-text-transform,$dropdown-text-shadow,$dropdown-letter-spacing,$dropdown-font-weight,$dropdown-font-style,$dropdown-font-variant,$dropdown-font-size,$dropdown-font-family,$dropdown-line-height,$dropdown-margin,$dropdown-padding,$dropdown-border-top,$dropdown-border-right,$dropdown-border-bottom,$dropdown-border-left,$dropdown-border-radius,$dropdown-bgArgs,$dropdown-box-shadow,$dropdown-link-colors,$dropdown-text-dec,$dropdown-hover-text-dec;
+
+//!ul li ul li - dropdown items
+
+$dropdown-item-margin:null!default;
+$dropdown-item-padding:null!default;
+$dropdown-item-border-top:null!default;
+$dropdown-item-border-right:null!default;
+$dropdown-item-border-bottom:null!default;
+$dropdown-item-border-left:null!default;
+$dropdown-item-border-radius:null!default;
+$dropdown-item-bgArgs:null!default;
+$dropdown-item-box-shadow:null!default;
+
+$dropdown-item-args:$dropdown-item-margin,$dropdown-item-padding,$dropdown-item-border-top,$dropdown-item-border-right,$dropdown-item-border-bottom,$dropdown-item-border-left,$dropdown-item-border-radius,$dropdown-item-bgArgs,$dropdown-item-box-shadow;
+
+//ul li ul li > a - dropdown links
+$dropdown-item-link-padding:0 5px!default;
+$dropdown-item-link-link-colors:null!default;
+$dropdown-item-link-text-dec:none!default;
+$dropdown-item-link-hover-text-dec:none!default;
+
+//ul li ul li > a:hover - dropdown hover
+$dropdown-item-hover-bgArgs:null!default;
+
+$dropdown-item-hover-args: $dropdown-item-hover-bgArgs;
+
+//----------------------------------
+//!Secondary Nav
+//----------------------------------
+
+$secondary-width:null!default;
+$secondary-height:null!default;
+
+$secondary-float:null!default;
+$secondary-position:null!default;
+$secondary-top:null!default;
+$secondary-left:null!default;
+$secondary-right:null!default;
+$secondary-bottom:null!default;
+
+$secondary-color: null!default;
+$secondary-text-align: null!default;
+$secondary-text-transform: null!default;
+$secondary-text-shadow: null!default;
+$secondary-letter-spacing: null!default;
+$secondary-font-weight: null!default;
+$secondary-font-style: null!default;
+$secondary-font-variant: null!default;
+$secondary-font-size: null!default;
+$secondary-font-family: null!default;
+$secondary-line-height: null!default;
+$secondary-margin:null!default;
+$secondary-padding:null!default;
+$secondary-border-top:null!default;
+$secondary-border-right:null!default;
+$secondary-border-bottom:null!default;
+$secondary-border-left:null!default;
+$secondary-border-radius:null!default;
+$secondary-bgArgs:null!default;
+$secondary-box-shadow:null!default;
+$secondary-link-colors:null!default;
+$secondary-text-dec:null!default;
+$secondary-hover-text-dec:null!default;
+
+$secondary-args: $secondary-color,$secondary-text-align,$secondary-text-transform,$secondary-text-shadow,$secondary-letter-spacing,$secondary-font-weight,$secondary-font-style,$secondary-font-variant,$secondary-font-size,$secondary-font-family,$secondary-line-height,$secondary-margin,$secondary-padding,$secondary-border-top,$secondary-border-right,$secondary-border-bottom,$secondary-border-left,$secondary-border-radius,$secondary-bgArgs,$secondary-box-shadow,$secondary-link-colors,$secondary-text-dec,$secondary-hover-text-dec;
+
+$secondary-item-margin:null!default;
+$secondary-item-padding:null!default;
+$secondary-item-border-top:null!default;
+$secondary-item-border-right:null!default;
+$secondary-item-border-bottom:null!default;
+$secondary-item-border-left:null!default;
+$secondary-item-border-radius:null!default;
+$secondary-item-bgArgs:null!default;
+$secondary-item-box-shadow:null!default;
+$secondary-item-args:$secondary-item-margin,$secondary-item-padding,$secondary-item-border-top,$secondary-item-border-right,$secondary-item-border-bottom,$secondary-item-border-left,$secondary-item-border-radius,$secondary-item-bgArgs,$secondary-item-box-shadow;
+
+$secondary-item-link-padding:null!default;
+
+$secondary-item-link-link-colors:null!default;
+$secondary-item-link-text-dec:null!default;
+$secondary-item-link-hover-text-dec:null!default;
+$secondary-item-link-args:$secondary-item-link-link-colors,$secondary-item-link-text-dec,$secondary-item-link-hover-text-dec;
+
+
+//secondary hover
+$secondary-item-hover-args:null!default;
+
+//----------------------------------
+//!Controls
+//----------------------------------
+
+//!.title
+$title-color: null!default;
+$title-text-align: null!default;
+$title-text-transform: null!default;
+$title-text-shadow: null!default;
+$title-letter-spacing: null!default;
+$title-font-weight: null!default;
+$title-font-style: null!default;
+$title-font-variant: null!default;
+$title-font-size: null!default;
+$title-font-family: $headings-font-family!default;
+$title-line-height: null!default;
+$title-margin:null!default;
+$title-padding:null!default;
+$title-border-top:null!default;
+$title-border-right:null!default;
+$title-border-bottom:null!default;
+$title-border-left:null!default;
+$title-border-radius:null!default;
+$title-bgArgs:null!default;
+$title-box-shadow:null!default;
+$title-link-colors:null!default;
+$title-text-dec:null!default;
+$title-hover-text-dec:null!default;
+
+$title-args: $title-color,$title-text-align,$title-text-transform,$title-text-shadow,$title-letter-spacing,$title-font-weight,$title-font-style,$title-font-variant,$title-font-size,$title-font-family,$title-line-height,$title-margin,$title-padding,$title-border-top,$title-border-right,$title-border-bottom,$title-border-left,$title-border-radius,$title-bgArgs,$title-box-shadow,$title-link-colors,$title-text-dec,$title-hover-text-dec;
+
+//!.subtitle
+$subtitle-color: null!default;
+$subtitle-text-align: null!default;
+$subtitle-text-transform: null!default;
+$subtitle-text-shadow: null!default;
+$subtitle-letter-spacing: null!default;
+$subtitle-font-weight: null!default;
+$subtitle-font-style: null!default;
+$subtitle-font-variant: null!default;
+$subtitle-font-size: null!default;
+$subtitle-font-family: null!default;
+$subtitle-line-height: null!default;
+$subtitle-margin:null!default;
+$subtitle-padding:null!default;
+$subtitle-border-top:null!default;
+$subtitle-border-right:null!default;
+$subtitle-border-bottom:null!default;
+$subtitle-border-left:null!default;
+$subtitle-border-radius:null!default;
+$subtitle-bgArgs:null!default;
+$subtitle-box-shadow:null!default;
+$subtitle-link-colors:null!default;
+$subtitle-text-dec:null!default;
+$subtitle-hover-text-dec:null!default;
+
+$subtitle-args: $subtitle-color,$subtitle-text-align,$subtitle-text-transform,$subtitle-text-shadow,$subtitle-letter-spacing,$subtitle-font-weight,$subtitle-font-style,$subtitle-font-variant,$subtitle-font-size,$subtitle-font-family,$subtitle-line-height,$subtitle-margin,$subtitle-padding,$subtitle-border-top,$subtitle-border-right,$subtitle-border-bottom,$subtitle-border-left,$subtitle-border-radius,$subtitle-bgArgs,$subtitle-box-shadow,$subtitle-link-colors,$subtitle-text-dec,$subtitle-hover-text-dec;
+
+//!.teasertitle
+$teasertitle-color: null!default;
+$teasertitle-text-align: null!default;
+$teasertitle-text-transform: null!default;
+$teasertitle-text-shadow: null!default;
+$teasertitle-letter-spacing: null!default;
+$teasertitle-font-weight: null!default;
+$teasertitle-font-style: null!default;
+$teasertitle-font-variant: null!default;
+$teasertitle-font-size: null!default;
+$teasertitle-font-family: null!default;
+$teasertitle-line-height: null!default;
+$teasertitle-args: $teasertitle-color,$teasertitle-text-align,$teasertitle-text-transform,$teasertitle-text-shadow,$teasertitle-letter-spacing,$teasertitle-font-weight,$teasertitle-font-style,$teasertitle-font-variant,$teasertitle-font-size,$teasertitle-font-family,$teasertitle-line-height;
+
+//Within teaserLists
+//title
+$teaserlist-title-font-size:null!default;
+//subtitle
+$teaserlist-subtitle-font-size:null!default;
+
+
+//!.dim
+$dim-color: null!default;
+$dim-letter-spacing: null!default;
+$dim-font-weight: null!default;
+$dim-font-style: null!default;
+$dim-font-size: null!default;
+$dim-args: $dim-color,/*text-align*/null,/*text-transform*/null,/*text-shadow*/null,$dim-letter-spacing,$dim-font-weight,$dim-font-style,/*font-variant*/null,$dim-font-size,/*font-family*/null,/*line-height*/null;
+
+//mini
+$mini-font-size:null!default;
+//micro
+$micro-font-size:null!default;
+
+//lit
+$lit-color:null!default;
+
+
+//!.readMore
+$readmore-color: null!default;
+$readmore-text-align: null!default;
+$readmore-text-transform: null!default;
+$readmore-text-shadow: null!default;
+$readmore-letter-spacing: null!default;
+$readmore-font-weight: null!default;
+$readmore-font-style: null!default;
+$readmore-font-variant: null!default;
+$readmore-font-size: null!default;
+$readmore-font-family: null!default;
+$readmore-line-height: null!default;
+
+$readmore-link-colors:null!default;
+$readmore-text-dec:null!default;
+$readmore-hover-text-dec:null!default;
+
+$readmore-args: $readmore-color,$readmore-text-align,$readmore-text-transform,$readmore-text-shadow,$readmore-letter-spacing,$readmore-font-weight,$readmore-font-style,$readmore-font-variant,$readmore-font-size,$readmore-font-family,$readmore-line-height;
+
+//!.bgTitleBar
+$bgtitlebar-color: null!default;
+$bgtitlebar-text-align: null!default;
+$bgtitlebar-text-transform: null!default;
+$bgtitlebar-text-shadow: null!default;
+$bgtitlebar-letter-spacing: null!default;
+$bgtitlebar-font-weight: null!default;
+$bgtitlebar-font-style: null!default;
+$bgtitlebar-font-variant: null!default;
+$bgtitlebar-font-size: null!default;
+$bgtitlebar-font-family: null!default;
+$bgtitlebar-line-height: null!default;
+$bgtitlebar-margin:null!default;
+$bgtitlebar-padding:null!default;
+$bgtitlebar-border-top:null!default;
+$bgtitlebar-border-right:null!default;
+$bgtitlebar-border-bottom:null!default;
+$bgtitlebar-border-left:null!default;
+$bgtitlebar-border-radius:null!default;
+$bgtitlebar-bgArgs:null!default;
+$bgtitlebar-box-shadow:null!default;
+$bgtitlebar-link-colors:null!default;
+$bgtitlebar-text-dec:null!default;
+$bgtitlebar-hover-text-dec:null!default;
+
+$bgtitlebar-args: $bgtitlebar-color,$bgtitlebar-text-align,$bgtitlebar-text-transform,$bgtitlebar-text-shadow,$bgtitlebar-letter-spacing,$bgtitlebar-font-weight,$bgtitlebar-font-style,$bgtitlebar-font-variant,$bgtitlebar-font-size,$bgtitlebar-font-family,$bgtitlebar-line-height,$bgtitlebar-margin,$bgtitlebar-padding,$bgtitlebar-border-top,$bgtitlebar-border-right,$bgtitlebar-border-bottom,$bgtitlebar-border-left,$bgtitlebar-border-radius,$bgtitlebar-bgArgs,$bgtitlebar-box-shadow,$bgtitlebar-link-colors,$bgtitlebar-text-dec,$bgtitlebar-hover-text-dec;
+
+//.btnBar
+$btnbar-color: null!default;
+$btnbar-text-align: null!default;
+$btnbar-text-transform: null!default;
+$btnbar-text-shadow: null!default;
+$btnbar-letter-spacing: null!default;
+$btnbar-font-weight: null!default;
+$btnbar-font-style: null!default;
+$btnbar-font-variant: null!default;
+$btnbar-font-size: null!default;
+$btnbar-font-family: null!default;
+$btnbar-line-height: null!default;
+$btnbar-margin:null!default;
+$btnbar-padding:null!default;
+$btnbar-border-top:null!default;
+$btnbar-border-right:null!default;
+$btnbar-border-bottom:null!default;
+$btnbar-border-left:null!default;
+$btnbar-border-radius:null!default;
+$btnbar-bgArgs:null!default;
+$btnbar-box-shadow:null!default;
+$btnbar-link-colors:null!default;
+$btnbar-text-dec:null!default;
+$btnbar-hover-text-dec:null!default;
+
+$btnbar-args: $btnbar-color,$btnbar-text-align,$btnbar-text-transform,$btnbar-text-shadow,$btnbar-letter-spacing,$btnbar-font-weight,$btnbar-font-style,$btnbar-font-variant,$btnbar-font-size,$btnbar-font-family,$btnbar-line-height,$btnbar-margin,$btnbar-padding,$btnbar-border-top,$btnbar-border-right,$btnbar-border-bottom,$btnbar-border-left,$btnbar-border-radius,$btnbar-bgArgs,$btnbar-box-shadow,$btnbar-link-colors,$btnbar-text-dec,$btnbar-hover-text-dec;
+
+//.paging
+$paging-margin:null!default;
+$paging-padding:null!default;
+$paging-border-top:null!default;
+$paging-border-right:null!default;
+$paging-border-bottom:null!default;
+$paging-border-left:null!default;
+$paging-border-radius:null!default;
+$paging-bgArgs:null!default;
+$paging-box-shadow:null!default;
+$paging-args:$paging-margin,$paging-padding,$paging-border-top,$paging-border-right,$paging-border-bottom,$paging-border-left,$paging-border-radius,$paging-bgArgs,$paging-box-shadow;
+
+//  ul.PagerList
+$pager-list-margin:null!default;
+$pager-list-padding:null!default;
+$pager-list-border-top:null!default;
+$pager-list-border-right:null!default;
+$pager-list-border-bottom:null!default;
+$pager-list-border-left:null!default;
+$pager-list-border-radius:null!default;
+$pager-list-bgArgs:null!default;
+$pager-list-box-shadow:null!default;
+$pager-list-args:$pager-list-margin,$pager-list-padding,$pager-list-border-top,$pager-list-border-right,$pager-list-border-bottom,$pager-list-border-left,$pager-list-border-radius,$pager-list-bgArgs,$pager-list-box-shadow;
+//    .PagerNav 
+
+//      a 
+$pager-nav-link-link-colors:null!default;
+$pager-nav-link-text-dec:null!default;
+$pager-nav-link-hover-text-dec:null!default;
+$pager-nav-link-args:$pager-nav-link-link-colors,$pager-nav-link-text-dec,$pager-nav-link-hover-text-dec;
+
+
+//		.PagerSelected a
+$pager-nav-selected-link-colors:null!default;
+$pager-nav-selected-text-dec:null!default;
+$pager-nav-selected-hover-text-dec:null!default;
+$pager-nav-selected-args:$pager-nav-selected-link-colors,$pager-nav-selected-text-dec,$pager-nav-selected-hover-text-dec;
+
+
+//.entry-section 
+$entry-section-margin:null!default;
+
+//.rowEven
+$row-even-margin:null!default;
+$row-even-padding:null!default;
+$row-even-border-top:null!default;
+$row-even-border-right:null!default;
+$row-even-border-bottom:null!default;
+$row-even-border-left:null!default;
+$row-even-border-radius:null!default;
+$row-even-bgArgs:null!default;
+$row-even-box-shadow:null!default;
+$row-even-args:$row-even-margin,$row-even-padding,$row-even-border-top,$row-even-border-right,$row-even-border-bottom,$row-even-border-left,$row-even-border-radius,$row-even-bgArgs,$row-even-box-shadow;
+
+
+//.rowOdd
+$row-odd-margin:null!default;
+$row-odd-padding:null!default;
+$row-odd-border-top:null!default;
+$row-odd-border-right:null!default;
+$row-odd-border-bottom:null!default;
+$row-odd-border-left:null!default;
+$row-odd-border-radius:null!default;
+$row-odd-bgArgs:null!default;
+$row-odd-box-shadow:null!default;
+$row-odd-args:$row-odd-margin,$row-odd-padding,$row-odd-border-top,$row-odd-border-right,$row-odd-border-bottom,$row-odd-border-left,$row-odd-border-radius,$row-odd-bgArgs,$row-odd-box-shadow;
+
+//----------------------------------
+//!Skin 01
+//----------------------------------
+
+//skin - article
+$skin-color: null!default;
+$skin-text-align: null!default;
+$skin-text-transform: null!default;
+$skin-text-shadow: null!default;
+$skin-letter-spacing: null!default;
+$skin-font-weight: null!default;
+$skin-font-style: null!default;
+$skin-font-variant: null!default;
+$skin-font-size: null!default;
+$skin-font-family: null!default;
+$skin-line-height: null!default;
+$skin-margin:null!default;
+$skin-padding: null!default;
+$skin-border-top:null!default;
+$skin-border-right:null!default;
+$skin-border-bottom:null!default;
+$skin-border-left:null!default;
+$skin-border-radius:null!default;
+$skin-bgArgs:null!default;
+$skin-box-shadow:null!default;
+$skin-link-colors:null!default;
+$skin-text-dec:null!default;
+$skin-hover-text-dec:null!default;
+
+$skin-args: $skin-color,$skin-text-align,$skin-text-transform,$skin-text-shadow,$skin-letter-spacing,$skin-font-weight,$skin-font-style,$skin-font-variant,$skin-font-size,$skin-font-family,$skin-line-height,$skin-margin,$skin-padding,$skin-border-top,$skin-border-right,$skin-border-bottom,$skin-border-left,$skin-border-radius,$skin-bgArgs,$skin-box-shadow,$skin-link-colors,$skin-text-dec,$skin-hover-text-dec;
+
+//!article > header
+$skin-header-color: null!default;
+$skin-header-text-align: null!default;
+$skin-header-text-transform: null!default;
+$skin-header-text-shadow: null!default;
+$skin-header-letter-spacing: null!default;
+$skin-header-font-weight: null!default;
+$skin-header-font-style: null!default;
+$skin-header-font-variant: null!default;
+$skin-header-font-size: null!default;
+$skin-header-font-family: null!default;
+$skin-header-line-height: null!default;
+$skin-header-margin:null!default;
+$skin-header-padding:null!default;
+$skin-header-border-top:null!default;
+$skin-header-border-right:null!default;
+$skin-header-border-bottom:null!default;
+$skin-header-border-left:null!default;
+$skin-header-border-radius:null!default;
+$skin-header-bgArgs:null!default;
+$skin-header-box-shadow:null!default;
+$skin-header-link-colors:null!default;
+$skin-header-text-dec:null!default;
+$skin-header-hover-text-dec:null!default;
+
+$skin-header-args: $skin-header-color,$skin-header-text-align,$skin-header-text-transform,$skin-header-text-shadow,$skin-header-letter-spacing,$skin-header-font-weight,$skin-header-font-style,$skin-header-font-variant,$skin-header-font-size,$skin-header-font-family,$skin-header-line-height,$skin-header-margin,$skin-header-padding,$skin-header-border-top,$skin-header-border-right,$skin-header-border-bottom,$skin-header-border-left,$skin-header-border-radius,$skin-header-bgArgs,$skin-header-box-shadow,$skin-header-link-colors,$skin-header-text-dec,$skin-header-hover-text-dec;
+
+//!article > header > h2
+$skin-h2-color: null!default;
+$skin-h2-text-align: null!default;
+$skin-h2-text-transform: null!default;
+$skin-h2-text-shadow: null!default;
+$skin-h2-letter-spacing: null!default;
+$skin-h2-font-weight: null!default;
+$skin-h2-font-style: null!default;
+$skin-h2-font-variant: null!default;
+$skin-h2-font-size: null!default;
+$skin-h2-font-family: null!default;
+$skin-h2-line-height: null!default;
+$skin-h2-margin:null!default;
+$skin-h2-padding:null!default;
+$skin-h2-border-top:null!default;
+$skin-h2-border-right:null!default;
+$skin-h2-border-bottom:null!default;
+$skin-h2-border-left:null!default;
+$skin-h2-border-radius:null!default;
+$skin-h2-bgArgs:null!default;
+$skin-h2-box-shadow:null!default;
+$skin-h2-link-colors:null!default;
+$skin-h2-text-dec:null!default;
+$skin-h2-hover-text-dec:null!default;
+
+$skin-h2-args: $skin-h2-color,$skin-h2-text-align,$skin-h2-text-transform,$skin-h2-text-shadow,$skin-h2-letter-spacing,$skin-h2-font-weight,$skin-h2-font-style,$skin-h2-font-variant,$skin-h2-font-size,$skin-h2-font-family,$skin-h2-line-height,$skin-h2-margin,$skin-h2-padding,$skin-h2-border-top,$skin-h2-border-right,$skin-h2-border-bottom,$skin-h2-border-left,$skin-h2-border-radius,$skin-h2-bgArgs,$skin-h2-box-shadow,$skin-h2-link-colors,$skin-h2-text-dec,$skin-h2-hover-text-dec;
+
+//!skin nav
+$skin-nav-clear: yes!default;
+$skin-nav-float-direction: left!default;
+
+$skin-nav-color: null!default;
+$skin-nav-text-align: null!default;
+$skin-nav-text-transform: null!default;
+$skin-nav-text-shadow: null!default;
+$skin-nav-letter-spacing: null!default;
+$skin-nav-font-weight: null!default;
+$skin-nav-font-style: null!default;
+$skin-nav-font-variant: null!default;
+$skin-nav-font-size: null!default;
+$skin-nav-font-family: null!default;
+$skin-nav-line-height: null!default;
+$skin-nav-margin:null!default;
+$skin-nav-padding:null!default;
+$skin-nav-border-top:null!default;
+$skin-nav-border-right:null!default;
+$skin-nav-border-bottom:null!default;
+$skin-nav-border-left:null!default;
+$skin-nav-border-radius:null!default;
+$skin-nav-bgArgs:null!default;
+$skin-nav-box-shadow:null!default;
+$skin-nav-link-colors:null!default;
+$skin-nav-text-dec:null!default;
+$skin-nav-hover-text-dec:null!default;
+
+$skin-nav-args: $skin-nav-color,$skin-nav-text-align,$skin-nav-text-transform,$skin-nav-text-shadow,$skin-nav-letter-spacing,$skin-nav-font-weight,$skin-nav-font-style,$skin-nav-font-variant,$skin-nav-font-size,$skin-nav-font-family,$skin-nav-line-height,$skin-nav-margin,$skin-nav-padding,$skin-nav-border-top,$skin-nav-border-right,$skin-nav-border-bottom,$skin-nav-border-left,$skin-nav-border-radius,$skin-nav-bgArgs,$skin-nav-box-shadow,$skin-nav-link-colors,$skin-nav-text-dec,$skin-nav-hover-text-dec;
+
+//skin nav links
+$skin-nav-link-link-colors:null!default;
+$skin-nav-link-text-dec:null!default;
+$skin-nav-link-hover-text-dec:null!default;
+$skin-nav-link-args:$skin-nav-link-link-colors,$skin-nav-link-text-dec,$skin-nav-link-hover-text-dec;
+
+$skin-nav-link-spacing: null!default;
+
+//skin nav footer
+$skin-nav-footer-float-direction: left!default;
+$skin-nav-footer-link-link-colors:null!default;
+$skin-nav-footer-link-text-dec:null!default;
+$skin-nav-footer-link-hover-text-dec:null!default;
+
+$skin-nav-footer-link-spacing: null!default;
+
+//skin-content
+$skin-content-color: null!default;
+$skin-content-text-align: null!default;
+$skin-content-text-transform: null!default;
+$skin-content-text-shadow: null!default;
+$skin-content-letter-spacing: null!default;
+$skin-content-font-weight: null!default;
+$skin-content-font-style: null!default;
+$skin-content-font-variant: null!default;
+$skin-content-font-size: null!default;
+$skin-content-font-family: null!default;
+$skin-content-line-height: null!default;
+$skin-content-margin:null!default;
+$skin-content-padding:null!default;
+$skin-content-border-top:null!default;
+$skin-content-border-right:null!default;
+$skin-content-border-bottom:null!default;
+$skin-content-border-left:null!default;
+$skin-content-border-radius:null!default;
+$skin-content-bgArgs:null!default;
+$skin-content-box-shadow:null!default;
+$skin-content-link-colors:null!default;
+$skin-content-text-dec:null!default;
+$skin-content-hover-text-dec:null!default;
+
+$skin-content-args: $skin-content-color,$skin-content-text-align,$skin-content-text-transform,$skin-content-text-shadow,$skin-content-letter-spacing,$skin-content-font-weight,$skin-content-font-style,$skin-content-font-variant,$skin-content-font-size,$skin-content-font-family,$skin-content-line-height,$skin-content-margin,$skin-content-padding,$skin-content-border-top,$skin-content-border-right,$skin-content-border-bottom,$skin-content-border-left,$skin-content-border-radius,$skin-content-bgArgs,$skin-content-box-shadow,$skin-content-link-colors,$skin-content-text-dec,$skin-content-hover-text-dec;
+
+//----------------------------------
+//Skin 01 ALT
+//----------------------------------
+
+
+//!Skin 01 Alt Control Styles
+
+//.title
+$s01alt-title-color: null!default;
+$s01alt-title-text-align: null!default;
+$s01alt-title-text-transform: null!default;
+$s01alt-title-text-shadow: null!default;
+$s01alt-title-letter-spacing: null!default;
+$s01alt-title-font-weight: null!default;
+$s01alt-title-font-style: null!default;
+$s01alt-title-font-variant: null!default;
+$s01alt-title-font-size: null!default;
+$s01alt-title-font-family: null!default;
+$s01alt-title-line-height: null!default;
+$s01alt-title-margin:null!default;
+$s01alt-title-padding:null!default;
+$s01alt-title-border-top:null!default;
+$s01alt-title-border-right:null!default;
+$s01alt-title-border-bottom:null!default;
+$s01alt-title-border-left:null!default;
+$s01alt-title-border-radius:null!default;
+$s01alt-title-bgArgs:null!default;
+$s01alt-title-box-shadow:null!default;
+$s01alt-title-link-colors:null!default;
+$s01alt-title-text-dec:null!default;
+$s01alt-title-hover-text-dec:null!default;
+
+$s01alt-title-args: $s01alt-title-color,$s01alt-title-text-align,$s01alt-title-text-transform,$s01alt-title-text-shadow,$s01alt-title-letter-spacing,$s01alt-title-font-weight,$s01alt-title-font-style,$s01alt-title-font-variant,$s01alt-title-font-size,$s01alt-title-font-family,$s01alt-title-line-height,$s01alt-title-margin,$s01alt-title-padding,$s01alt-title-border-top,$s01alt-title-border-right,$s01alt-title-border-bottom,$s01alt-title-border-left,$s01alt-title-border-radius,$s01alt-title-bgArgs,$s01alt-title-box-shadow,$s01alt-title-link-colors,$s01alt-title-text-dec,$s01alt-title-hover-text-dec;
+
+//.subtitle
+$s01alt-subtitle-color: null!default;
+$s01alt-subtitle-text-align: null!default;
+$s01alt-subtitle-text-transform: null!default;
+$s01alt-subtitle-text-shadow: null!default;
+$s01alt-subtitle-letter-spacing: null!default;
+$s01alt-subtitle-font-weight: null!default;
+$s01alt-subtitle-font-style: null!default;
+$s01alt-subtitle-font-variant: null!default;
+$s01alt-subtitle-font-size: null!default;
+$s01alt-subtitle-font-family: null!default;
+$s01alt-subtitle-line-height: null!default;
+$s01alt-subtitle-margin:null!default;
+$s01alt-subtitle-padding:null!default;
+$s01alt-subtitle-border-top:null!default;
+$s01alt-subtitle-border-right:null!default;
+$s01alt-subtitle-border-bottom:null!default;
+$s01alt-subtitle-border-left:null!default;
+$s01alt-subtitle-border-radius:null!default;
+$s01alt-subtitle-bgArgs:null!default;
+$s01alt-subtitle-box-shadow:null!default;
+$s01alt-subtitle-link-colors:null!default;
+$s01alt-subtitle-text-dec:null!default;
+$s01alt-subtitle-hover-text-dec:null!default;
+
+$s01alt-subtitle-args: $s01alt-subtitle-color,$s01alt-subtitle-text-align,$s01alt-subtitle-text-transform,$s01alt-subtitle-text-shadow,$s01alt-subtitle-letter-spacing,$s01alt-subtitle-font-weight,$s01alt-subtitle-font-style,$s01alt-subtitle-font-variant,$s01alt-subtitle-font-size,$s01alt-subtitle-font-family,$s01alt-subtitle-line-height,$s01alt-subtitle-margin,$s01alt-subtitle-padding,$s01alt-subtitle-border-top,$s01alt-subtitle-border-right,$s01alt-subtitle-border-bottom,$s01alt-subtitle-border-left,$s01alt-subtitle-border-radius,$s01alt-subtitle-bgArgs,$s01alt-subtitle-box-shadow,$s01alt-subtitle-link-colors,$s01alt-subtitle-text-dec,$s01alt-subtitle-hover-text-dec;
+
+//.teasertitle
+$s01alt-teasertitle-color: null!default;
+$s01alt-teasertitle-text-align: null!default;
+$s01alt-teasertitle-text-transform: null!default;
+$s01alt-teasertitle-text-shadow: null!default;
+$s01alt-teasertitle-letter-spacing: null!default;
+$s01alt-teasertitle-font-weight: null!default;
+$s01alt-teasertitle-font-style: null!default;
+$s01alt-teasertitle-font-variant: null!default;
+$s01alt-teasertitle-font-size: null!default;
+$s01alt-teasertitle-font-family: null!default;
+$s01alt-teasertitle-line-height: null!default;
+$s01alt-teasertitle-args: $s01alt-teasertitle-color,$s01alt-teasertitle-text-align,$s01alt-teasertitle-text-transform,$s01alt-teasertitle-text-shadow,$s01alt-teasertitle-letter-spacing,$s01alt-teasertitle-font-weight,$s01alt-teasertitle-font-style,$s01alt-teasertitle-font-variant,$s01alt-teasertitle-font-size,$s01alt-teasertitle-font-family,$s01alt-teasertitle-line-height;
+
+//Within teaserLists
+//title
+$s01alt-teaserlist-title-font-size:null!default;
+//subtitle
+$s01alt-teaserlist-subtitle-font-size:null!default;
+
+
+//.dim
+$s01alt-dim-color: null!default;
+$s01alt-dim-letter-spacing: null!default;
+$s01alt-dim-font-weight: null!default;
+$s01alt-dim-font-style: null!default;
+$s01alt-dim-font-size: null!default;
+$s01alt-dim-args: $s01alt-dim-color,/*text-align*/null,/*text-transform*/null,/*text-shadow*/null,$s01alt-dim-letter-spacing,$s01alt-dim-font-weight,$s01alt-dim-font-style,/*font-variant*/null,$s01alt-dim-font-size,/*font-family*/null,/*line-height*/null;
+
+//mini
+$s01alt-mini-font-size:null!default;
+//micro
+$s01alt-micro-font-size:null!default;
+
+//lit
+$s01alt-lit-color:null!default;
+
+
+//.readMore
+$s01alt-readmore-color: null!default;
+$s01alt-readmore-text-align: null!default;
+$s01alt-readmore-text-transform: null!default;
+$s01alt-readmore-text-shadow: null!default;
+$s01alt-readmore-letter-spacing: null!default;
+$s01alt-readmore-font-weight: null!default;
+$s01alt-readmore-font-style: null!default;
+$s01alt-readmore-font-variant: null!default;
+$s01alt-readmore-font-size: null!default;
+$s01alt-readmore-font-family: null!default;
+$s01alt-readmore-line-height: null!default;
+
+$s01alt-readmore-link-colors:null!default;
+$s01alt-readmore-text-dec:null!default;
+$s01alt-readmore-hover-text-dec:null!default;
+
+$s01alt-readmore-args: $s01alt-readmore-color,$s01alt-readmore-text-align,$s01alt-readmore-text-transform,$s01alt-readmore-text-shadow,$s01alt-readmore-letter-spacing,$s01alt-readmore-font-weight,$s01alt-readmore-font-style,$s01alt-readmore-font-variant,$s01alt-readmore-font-size,$s01alt-readmore-font-family,$s01alt-readmore-line-height;
+
+//.bgTitleBar
+$s01alt-bgtitlebar-color: null!default;
+$s01alt-bgtitlebar-text-align: null!default;
+$s01alt-bgtitlebar-text-transform: null!default;
+$s01alt-bgtitlebar-text-shadow: null!default;
+$s01alt-bgtitlebar-letter-spacing: null!default;
+$s01alt-bgtitlebar-font-weight: null!default;
+$s01alt-bgtitlebar-font-style: null!default;
+$s01alt-bgtitlebar-font-variant: null!default;
+$s01alt-bgtitlebar-font-size: null!default;
+$s01alt-bgtitlebar-font-family: null!default;
+$s01alt-bgtitlebar-line-height: null!default;
+$s01alt-bgtitlebar-margin:null!default;
+$s01alt-bgtitlebar-padding:null!default;
+$s01alt-bgtitlebar-border-top:null!default;
+$s01alt-bgtitlebar-border-right:null!default;
+$s01alt-bgtitlebar-border-bottom:null!default;
+$s01alt-bgtitlebar-border-left:null!default;
+$s01alt-bgtitlebar-border-radius:null!default;
+$s01alt-bgtitlebar-bgArgs:null!default;
+$s01alt-bgtitlebar-box-shadow:null!default;
+$s01alt-bgtitlebar-link-colors:null!default;
+$s01alt-bgtitlebar-text-dec:null!default;
+$s01alt-bgtitlebar-hover-text-dec:null!default;
+
+$s01alt-bgtitlebar-args: $s01alt-bgtitlebar-color,$s01alt-bgtitlebar-text-align,$s01alt-bgtitlebar-text-transform,$s01alt-bgtitlebar-text-shadow,$s01alt-bgtitlebar-letter-spacing,$s01alt-bgtitlebar-font-weight,$s01alt-bgtitlebar-font-style,$s01alt-bgtitlebar-font-variant,$s01alt-bgtitlebar-font-size,$s01alt-bgtitlebar-font-family,$s01alt-bgtitlebar-line-height,$s01alt-bgtitlebar-margin,$s01alt-bgtitlebar-padding,$s01alt-bgtitlebar-border-top,$s01alt-bgtitlebar-border-right,$s01alt-bgtitlebar-border-bottom,$s01alt-bgtitlebar-border-left,$s01alt-bgtitlebar-border-radius,$s01alt-bgtitlebar-bgArgs,$s01alt-bgtitlebar-box-shadow,$s01alt-bgtitlebar-link-colors,$s01alt-bgtitlebar-text-dec,$s01alt-bgtitlebar-hover-text-dec;
+
+//.btnBar
+$s01alt-btnbar-color: null!default;
+$s01alt-btnbar-text-align: null!default;
+$s01alt-btnbar-text-transform: null!default;
+$s01alt-btnbar-text-shadow: null!default;
+$s01alt-btnbar-letter-spacing: null!default;
+$s01alt-btnbar-font-weight: null!default;
+$s01alt-btnbar-font-style: null!default;
+$s01alt-btnbar-font-variant: null!default;
+$s01alt-btnbar-font-size: null!default;
+$s01alt-btnbar-font-family: null!default;
+$s01alt-btnbar-line-height: null!default;
+$s01alt-btnbar-margin:null!default;
+$s01alt-btnbar-padding:null!default;
+$s01alt-btnbar-border-top:null!default;
+$s01alt-btnbar-border-right:null!default;
+$s01alt-btnbar-border-bottom:null!default;
+$s01alt-btnbar-border-left:null!default;
+$s01alt-btnbar-border-radius:null!default;
+$s01alt-btnbar-bgArgs:null!default;
+$s01alt-btnbar-box-shadow:null!default;
+$s01alt-btnbar-link-colors:null!default;
+$s01alt-btnbar-text-dec:null!default;
+$s01alt-btnbar-hover-text-dec:null!default;
+
+$s01alt-btnbar-args: $s01alt-btnbar-color,$s01alt-btnbar-text-align,$s01alt-btnbar-text-transform,$s01alt-btnbar-text-shadow,$s01alt-btnbar-letter-spacing,$s01alt-btnbar-font-weight,$s01alt-btnbar-font-style,$s01alt-btnbar-font-variant,$s01alt-btnbar-font-size,$s01alt-btnbar-font-family,$s01alt-btnbar-line-height,$s01alt-btnbar-margin,$s01alt-btnbar-padding,$s01alt-btnbar-border-top,$s01alt-btnbar-border-right,$s01alt-btnbar-border-bottom,$s01alt-btnbar-border-left,$s01alt-btnbar-border-radius,$s01alt-btnbar-bgArgs,$s01alt-btnbar-box-shadow,$s01alt-btnbar-link-colors,$s01alt-btnbar-text-dec,$s01alt-btnbar-hover-text-dec;
+
+//.paging
+$s01alt-paging-margin:null!default;
+$s01alt-paging-padding:null!default;
+$s01alt-paging-border-top:null!default;
+$s01alt-paging-border-right:null!default;
+$s01alt-paging-border-bottom:null!default;
+$s01alt-paging-border-left:null!default;
+$s01alt-paging-border-radius:null!default;
+$s01alt-paging-bgArgs:null!default;
+$s01alt-paging-box-shadow:null!default;
+$s01alt-paging-args:$s01alt-paging-margin,$s01alt-paging-padding,$s01alt-paging-border-top,$s01alt-paging-border-right,$s01alt-paging-border-bottom,$s01alt-paging-border-left,$s01alt-paging-border-radius,$s01alt-paging-bgArgs,$s01alt-paging-box-shadow;
+
+//  ul.PagerList
+$s01alt-pager-list-margin:null!default;
+$s01alt-pager-list-padding:null!default;
+$s01alt-pager-list-border-top:null!default;
+$s01alt-pager-list-border-right:null!default;
+$s01alt-pager-list-border-bottom:null!default;
+$s01alt-pager-list-border-left:null!default;
+$s01alt-pager-list-border-radius:null!default;
+$s01alt-pager-list-bgArgs:null!default;
+$s01alt-pager-list-box-shadow:null!default;
+$s01alt-pager-list-args:$s01alt-pager-list-margin,$s01alt-pager-list-padding,$s01alt-pager-list-border-top,$s01alt-pager-list-border-right,$s01alt-pager-list-border-bottom,$s01alt-pager-list-border-left,$s01alt-pager-list-border-radius,$s01alt-pager-list-bgArgs,$s01alt-pager-list-box-shadow;
+//    .PagerNav 
+
+//      a 
+$s01alt-pager-nav-link-link-colors:null!default;
+$s01alt-pager-nav-link-text-dec:null!default;
+$s01alt-pager-nav-link-hover-text-dec:null!default;
+$s01alt-pager-nav-link-args:$s01alt-pager-nav-link-link-colors,$s01alt-pager-nav-link-text-dec,$s01alt-pager-nav-link-hover-text-dec;
+
+
+//		.PagerSelected a
+$s01alt-pager-nav-selected-link-colors:null!default;
+$s01alt-pager-nav-selected-text-dec:null!default;
+$s01alt-pager-nav-selected-hover-text-dec:null!default;
+$s01alt-pager-nav-selected-args:$s01alt-pager-nav-selected-link-colors,$s01alt-pager-nav-selected-text-dec,$s01alt-pager-nav-selected-hover-text-dec;
+
+
+//.entry-section 
+$s01alt-entry-section-margin:null!default;
+
+//.rowEven
+$s01alt-row-even-margin:null!default;
+$s01alt-row-even-padding:null!default;
+$s01alt-row-even-border-top:null!default;
+$s01alt-row-even-border-right:null!default;
+$s01alt-row-even-border-bottom:null!default;
+$s01alt-row-even-border-left:null!default;
+$s01alt-row-even-border-radius:null!default;
+$s01alt-row-even-bgArgs:null!default;
+$s01alt-row-even-box-shadow:null!default;
+$s01alt-row-even-args:$s01alt-row-even-margin,$s01alt-row-even-padding,$s01alt-row-even-border-top,$s01alt-row-even-border-right,$s01alt-row-even-border-bottom,$s01alt-row-even-border-left,$s01alt-row-even-border-radius,$s01alt-row-even-bgArgs,$s01alt-row-even-box-shadow;
+
+
+//.rowOdd
+$s01alt-row-odd-margin:null!default;
+$s01alt-row-odd-padding:null!default;
+$s01alt-row-odd-border-top:null!default;
+$s01alt-row-odd-border-right:null!default;
+$s01alt-row-odd-border-bottom:null!default;
+$s01alt-row-odd-border-left:null!default;
+$s01alt-row-odd-border-radius:null!default;
+$s01alt-row-odd-bgArgs:null!default;
+$s01alt-row-odd-box-shadow:null!default;
+$s01alt-row-odd-args:$s01alt-row-odd-margin,$s01alt-row-odd-padding,$s01alt-row-odd-border-top,$s01alt-row-odd-border-right,$s01alt-row-odd-border-bottom,$s01alt-row-odd-border-left,$s01alt-row-odd-border-radius,$s01alt-row-odd-bgArgs,$s01alt-row-odd-box-shadow;
+
+
+
+//!Skin 01 Alt Skin Styles
+
+//skin - article
+$s01alt-color: null!default;
+$s01alt-text-align: null!default;
+$s01alt-text-transform: null!default;
+$s01alt-text-shadow: null!default;
+$s01alt-letter-spacing: null!default;
+$s01alt-font-weight: null!default;
+$s01alt-font-style: null!default;
+$s01alt-font-variant: null!default;
+$s01alt-font-size: null!default;
+$s01alt-font-family: null!default;
+$s01alt-line-height: null!default;
+$s01alt-margin:null!default;
+$s01alt-padding:null!default;
+$s01alt-border-top:null!default;
+$s01alt-border-right:null!default;
+$s01alt-border-bottom:null!default;
+$s01alt-border-left:null!default;
+$s01alt-border-radius:null!default;
+$s01alt-bgArgs:null!default;
+$s01alt-box-shadow:null!default;
+$s01alt-link-colors:null!default;
+$s01alt-text-dec:null!default;
+$s01alt-hover-text-dec:null!default;
+
+$s01alt-args: $s01alt-color,$s01alt-text-align,$s01alt-text-transform,$s01alt-text-shadow,$s01alt-letter-spacing,$s01alt-font-weight,$s01alt-font-style,$s01alt-font-variant,$s01alt-font-size,$s01alt-font-family,$s01alt-line-height,$s01alt-margin,$s01alt-padding,$s01alt-border-top,$s01alt-border-right,$s01alt-border-bottom,$s01alt-border-left,$s01alt-border-radius,$s01alt-bgArgs,$s01alt-box-shadow,$s01alt-link-colors,$s01alt-text-dec,$s01alt-hover-text-dec;
+
+//article > header
+$s01alt-header-color: null!default;
+$s01alt-header-text-align: null!default;
+$s01alt-header-text-transform: null!default;
+$s01alt-header-text-shadow: null!default;
+$s01alt-header-letter-spacing: null!default;
+$s01alt-header-font-weight: null!default;
+$s01alt-header-font-style: null!default;
+$s01alt-header-font-variant: null!default;
+$s01alt-header-font-size: null!default;
+$s01alt-header-font-family: null!default;
+$s01alt-header-line-height: null!default;
+$s01alt-header-margin:null!default;
+$s01alt-header-padding:null!default;
+$s01alt-header-border-top:null!default;
+$s01alt-header-border-right:null!default;
+$s01alt-header-border-bottom:null!default;
+$s01alt-header-border-left:null!default;
+$s01alt-header-border-radius:null!default;
+$s01alt-header-bgArgs:null!default;
+$s01alt-header-box-shadow:null!default;
+$s01alt-header-link-colors:null!default;
+$s01alt-header-text-dec:null!default;
+$s01alt-header-hover-text-dec:null!default;
+
+$s01alt-header-args: $s01alt-header-color,$s01alt-header-text-align,$s01alt-header-text-transform,$s01alt-header-text-shadow,$s01alt-header-letter-spacing,$s01alt-header-font-weight,$s01alt-header-font-style,$s01alt-header-font-variant,$s01alt-header-font-size,$s01alt-header-font-family,$s01alt-header-line-height,$s01alt-header-margin,$s01alt-header-padding,$s01alt-header-border-top,$s01alt-header-border-right,$s01alt-header-border-bottom,$s01alt-header-border-left,$s01alt-header-border-radius,$s01alt-header-bgArgs,$s01alt-header-box-shadow,$s01alt-header-link-colors,$s01alt-header-text-dec,$s01alt-header-hover-text-dec;
+
+//article > header > h2
+$s01alt-h2-color: null!default;
+$s01alt-h2-text-align: null!default;
+$s01alt-h2-text-transform: null!default;
+$s01alt-h2-text-shadow: null!default;
+$s01alt-h2-letter-spacing: null!default;
+$s01alt-h2-font-weight: null!default;
+$s01alt-h2-font-style: null!default;
+$s01alt-h2-font-variant: null!default;
+$s01alt-h2-font-size: null!default;
+$s01alt-h2-font-family: null!default;
+$s01alt-h2-line-height: null!default;
+$s01alt-h2-margin:null!default;
+$s01alt-h2-padding:null!default;
+$s01alt-h2-border-top:null!default;
+$s01alt-h2-border-right:null!default;
+$s01alt-h2-border-bottom:null!default;
+$s01alt-h2-border-left:null!default;
+$s01alt-h2-border-radius:null!default;
+$s01alt-h2-bgArgs:null!default;
+$s01alt-h2-box-shadow:null!default;
+$s01alt-h2-link-colors:null!default;
+$s01alt-h2-text-dec:null!default;
+$s01alt-h2-hover-text-dec:null!default;
+
+$s01alt-h2-args: $s01alt-h2-color,$s01alt-h2-text-align,$s01alt-h2-text-transform,$s01alt-h2-text-shadow,$s01alt-h2-letter-spacing,$s01alt-h2-font-weight,$s01alt-h2-font-style,$s01alt-h2-font-variant,$s01alt-h2-font-size,$s01alt-h2-font-family,$s01alt-h2-line-height,$s01alt-h2-margin,$s01alt-h2-padding,$s01alt-h2-border-top,$s01alt-h2-border-right,$s01alt-h2-border-bottom,$s01alt-h2-border-left,$s01alt-h2-border-radius,$s01alt-h2-bgArgs,$s01alt-h2-box-shadow,$s01alt-h2-link-colors,$s01alt-h2-text-dec,$s01alt-h2-hover-text-dec;
+
+//!skin nav
+
+$s01alt-nav-color: null!default;
+$s01alt-nav-text-align: null!default;
+$s01alt-nav-text-transform: null!default;
+$s01alt-nav-text-shadow: null!default;
+$s01alt-nav-letter-spacing: null!default;
+$s01alt-nav-font-weight: null!default;
+$s01alt-nav-font-style: null!default;
+$s01alt-nav-font-variant: null!default;
+$s01alt-nav-font-size: null!default;
+$s01alt-nav-font-family: null!default;
+$s01alt-nav-line-height: null!default;
+$s01alt-nav-margin:null!default;
+$s01alt-nav-padding:null!default;
+$s01alt-nav-border-top:null!default;
+$s01alt-nav-border-right:null!default;
+$s01alt-nav-border-bottom:null!default;
+$s01alt-nav-border-left:null!default;
+$s01alt-nav-border-radius:null!default;
+$s01alt-nav-bgArgs:null!default;
+$s01alt-nav-box-shadow:null!default;
+$s01alt-nav-link-colors:null!default;
+$s01alt-nav-text-dec:null!default;
+$s01alt-nav-hover-text-dec:null!default;
+
+$s01alt-nav-args: $s01alt-nav-color,$s01alt-nav-text-align,$s01alt-nav-text-transform,$s01alt-nav-text-shadow,$s01alt-nav-letter-spacing,$s01alt-nav-font-weight,$s01alt-nav-font-style,$s01alt-nav-font-variant,$s01alt-nav-font-size,$s01alt-nav-font-family,$s01alt-nav-line-height,$s01alt-nav-margin,$s01alt-nav-padding,$s01alt-nav-border-top,$s01alt-nav-border-right,$s01alt-nav-border-bottom,$s01alt-nav-border-left,$s01alt-nav-border-radius,$s01alt-nav-bgArgs,$s01alt-nav-box-shadow,$s01alt-nav-link-colors,$s01alt-nav-text-dec,$s01alt-nav-hover-text-dec;
+
+
+$s01alt-nav-clear: yes!default;
+$s01alt-nav-float-direction: left!default;
+
+//!skin nav links
+$s01alt-nav-link-link-colors:null!default;
+$s01alt-nav-link-text-dec:null!default;
+$s01alt-nav-link-hover-text-dec:null!default;
+$s01alt-nav-link-args:$s01alt-nav-link-link-colors,$s01alt-nav-link-text-dec,$s01alt-nav-link-hover-text-dec;
+
+$s01alt-nav-link-spacing: null!default;
+
+//skin nav footer
+$s01alt-nav-footer-float-direction: left!default;
+$s01alt-nav-footer-link-link-colors:null!default;
+$s01alt-nav-footer-link-text-dec:null!default;
+$s01alt-nav-footer-link-hover-text-dec:null!default;
+
+$s01alt-nav-footer-link-spacing: null!default;
+
+//skin-content
+$s01alt-content-color: null!default;
+$s01alt-content-text-align: null!default;
+$s01alt-content-text-transform: null!default;
+$s01alt-content-text-shadow: null!default;
+$s01alt-content-letter-spacing: null!default;
+$s01alt-content-font-weight: null!default;
+$s01alt-content-font-style: null!default;
+$s01alt-content-font-variant: null!default;
+$s01alt-content-font-size: null!default;
+$s01alt-content-font-family: null!default;
+$s01alt-content-line-height: null!default;
+$s01alt-content-margin:null!default;
+$s01alt-content-padding:null!default;
+$s01alt-content-border-top:null!default;
+$s01alt-content-border-right:null!default;
+$s01alt-content-border-bottom:null!default;
+$s01alt-content-border-left:null!default;
+$s01alt-content-border-radius:null!default;
+$s01alt-content-bgArgs:null!default;
+$s01alt-content-box-shadow:null!default;
+$s01alt-content-link-colors:null!default;
+$s01alt-content-text-dec:null!default;
+$s01alt-content-hover-text-dec:null!default;
+
+$s01alt-content-args: $s01alt-content-color,$s01alt-content-text-align,$s01alt-content-text-transform,$s01alt-content-text-shadow,$s01alt-content-letter-spacing,$s01alt-content-font-weight,$s01alt-content-font-style,$s01alt-content-font-variant,$s01alt-content-font-size,$s01alt-content-font-family,$s01alt-content-line-height,$s01alt-content-margin,$s01alt-content-padding,$s01alt-content-border-top,$s01alt-content-border-right,$s01alt-content-border-bottom,$s01alt-content-border-left,$s01alt-content-border-radius,$s01alt-content-bgArgs,$s01alt-content-box-shadow,$s01alt-content-link-colors,$s01alt-content-text-dec,$s01alt-content-hover-text-dec;
+
+
+//----------------------------------
+//Skin 02
+//----------------------------------
+
+//!Skin 02 Control Styles
+
+//!.title
+$s02-title-color: null!default;
+$s02-title-text-align: null!default;
+$s02-title-text-transform: null!default;
+$s02-title-text-shadow: null!default;
+$s02-title-letter-spacing: null!default;
+$s02-title-font-weight: null!default;
+$s02-title-font-style: null!default;
+$s02-title-font-variant: null!default;
+$s02-title-font-size: null!default;
+$s02-title-font-family: null!default;
+$s02-title-line-height: null!default;
+$s02-title-margin:null!default;
+$s02-title-padding:null!default;
+$s02-title-border-top:null!default;
+$s02-title-border-right:null!default;
+$s02-title-border-bottom:null!default;
+$s02-title-border-left:null!default;
+$s02-title-border-radius:null!default;
+$s02-title-bgArgs:null!default;
+$s02-title-box-shadow:null!default;
+$s02-title-link-colors:null!default;
+$s02-title-text-dec:null!default;
+$s02-title-hover-text-dec:null!default;
+
+$s02-title-args: $s02-title-color,$s02-title-text-align,$s02-title-text-transform,$s02-title-text-shadow,$s02-title-letter-spacing,$s02-title-font-weight,$s02-title-font-style,$s02-title-font-variant,$s02-title-font-size,$s02-title-font-family,$s02-title-line-height,$s02-title-margin,$s02-title-padding,$s02-title-border-top,$s02-title-border-right,$s02-title-border-bottom,$s02-title-border-left,$s02-title-border-radius,$s02-title-bgArgs,$s02-title-box-shadow,$s02-title-link-colors,$s02-title-text-dec,$s02-title-hover-text-dec;
+
+//.subtitle
+$s02-subtitle-color: null!default;
+$s02-subtitle-text-align: null!default;
+$s02-subtitle-text-transform: null!default;
+$s02-subtitle-text-shadow: null!default;
+$s02-subtitle-letter-spacing: null!default;
+$s02-subtitle-font-weight: null!default;
+$s02-subtitle-font-style: null!default;
+$s02-subtitle-font-variant: null!default;
+$s02-subtitle-font-size: null!default;
+$s02-subtitle-font-family: null!default;
+$s02-subtitle-line-height: null!default;
+$s02-subtitle-margin:null!default;
+$s02-subtitle-padding:null!default;
+$s02-subtitle-border-top:null!default;
+$s02-subtitle-border-right:null!default;
+$s02-subtitle-border-bottom:null!default;
+$s02-subtitle-border-left:null!default;
+$s02-subtitle-border-radius:null!default;
+$s02-subtitle-bgArgs:null!default;
+$s02-subtitle-box-shadow:null!default;
+$s02-subtitle-link-colors:null!default;
+$s02-subtitle-text-dec:null!default;
+$s02-subtitle-hover-text-dec:null!default;
+
+$s02-subtitle-args: $s02-subtitle-color,$s02-subtitle-text-align,$s02-subtitle-text-transform,$s02-subtitle-text-shadow,$s02-subtitle-letter-spacing,$s02-subtitle-font-weight,$s02-subtitle-font-style,$s02-subtitle-font-variant,$s02-subtitle-font-size,$s02-subtitle-font-family,$s02-subtitle-line-height,$s02-subtitle-margin,$s02-subtitle-padding,$s02-subtitle-border-top,$s02-subtitle-border-right,$s02-subtitle-border-bottom,$s02-subtitle-border-left,$s02-subtitle-border-radius,$s02-subtitle-bgArgs,$s02-subtitle-box-shadow,$s02-subtitle-link-colors,$s02-subtitle-text-dec,$s02-subtitle-hover-text-dec;
+
+//.teasertitle
+$s02-teasertitle-color: null!default;
+$s02-teasertitle-text-align: null!default;
+$s02-teasertitle-text-transform: null!default;
+$s02-teasertitle-text-shadow: null!default;
+$s02-teasertitle-letter-spacing: null!default;
+$s02-teasertitle-font-weight: null!default;
+$s02-teasertitle-font-style: null!default;
+$s02-teasertitle-font-variant: null!default;
+$s02-teasertitle-font-size: null!default;
+$s02-teasertitle-font-family: null!default;
+$s02-teasertitle-line-height: null!default;
+$s02-teasertitle-args: $s02-teasertitle-color,$s02-teasertitle-text-align,$s02-teasertitle-text-transform,$s02-teasertitle-text-shadow,$s02-teasertitle-letter-spacing,$s02-teasertitle-font-weight,$s02-teasertitle-font-style,$s02-teasertitle-font-variant,$s02-teasertitle-font-size,$s02-teasertitle-font-family,$s02-teasertitle-line-height;
+
+//Within teaserLists
+//title
+$s02-teaserlist-title-font-size:null!default;
+//subtitle
+$s02-teaserlist-subtitle-font-size:null!default;
+
+
+//.dim
+$s02-dim-color: null!default;
+$s02-dim-letter-spacing: null!default;
+$s02-dim-font-weight: null!default;
+$s02-dim-font-style: null!default;
+$s02-dim-font-size: null!default;
+$s02-dim-args: $s02-dim-color,/*text-align*/null,/*text-transform*/null,/*text-shadow*/null,$s02-dim-letter-spacing,$s02-dim-font-weight,$s02-dim-font-style,/*font-variant*/null,$s02-dim-font-size,/*font-family*/null,/*line-height*/null;
+
+//mini
+$s02-mini-font-size:null!default;
+//micro
+$s02-micro-font-size:null!default;
+
+//lit
+$s02-lit-color:null!default;
+
+
+//.readMore
+$s02-readmore-color: null!default;
+$s02-readmore-text-align: null!default;
+$s02-readmore-text-transform: null!default;
+$s02-readmore-text-shadow: null!default;
+$s02-readmore-letter-spacing: null!default;
+$s02-readmore-font-weight: null!default;
+$s02-readmore-font-style: null!default;
+$s02-readmore-font-variant: null!default;
+$s02-readmore-font-size: null!default;
+$s02-readmore-font-family: null!default;
+$s02-readmore-line-height: null!default;
+
+$s02-readmore-link-colors:null!default;
+$s02-readmore-text-dec:null!default;
+$s02-readmore-hover-text-dec:null!default;
+
+$s02-readmore-args: $s02-readmore-color,$s02-readmore-text-align,$s02-readmore-text-transform,$s02-readmore-text-shadow,$s02-readmore-letter-spacing,$s02-readmore-font-weight,$s02-readmore-font-style,$s02-readmore-font-variant,$s02-readmore-font-size,$s02-readmore-font-family,$s02-readmore-line-height;
+
+//.bgTitleBar
+$s02-bgtitlebar-color: null!default;
+$s02-bgtitlebar-text-align: null!default;
+$s02-bgtitlebar-text-transform: null!default;
+$s02-bgtitlebar-text-shadow: null!default;
+$s02-bgtitlebar-letter-spacing: null!default;
+$s02-bgtitlebar-font-weight: null!default;
+$s02-bgtitlebar-font-style: null!default;
+$s02-bgtitlebar-font-variant: null!default;
+$s02-bgtitlebar-font-size: null!default;
+$s02-bgtitlebar-font-family: null!default;
+$s02-bgtitlebar-line-height: null!default;
+$s02-bgtitlebar-margin:null!default;
+$s02-bgtitlebar-padding:null!default;
+$s02-bgtitlebar-border-top:null!default;
+$s02-bgtitlebar-border-right:null!default;
+$s02-bgtitlebar-border-bottom:null!default;
+$s02-bgtitlebar-border-left:null!default;
+$s02-bgtitlebar-border-radius:null!default;
+$s02-bgtitlebar-bgArgs:null!default;
+$s02-bgtitlebar-box-shadow:null!default;
+$s02-bgtitlebar-link-colors:null!default;
+$s02-bgtitlebar-text-dec:null!default;
+$s02-bgtitlebar-hover-text-dec:null!default;
+
+$s02-bgtitlebar-args: $s02-bgtitlebar-color,$s02-bgtitlebar-text-align,$s02-bgtitlebar-text-transform,$s02-bgtitlebar-text-shadow,$s02-bgtitlebar-letter-spacing,$s02-bgtitlebar-font-weight,$s02-bgtitlebar-font-style,$s02-bgtitlebar-font-variant,$s02-bgtitlebar-font-size,$s02-bgtitlebar-font-family,$s02-bgtitlebar-line-height,$s02-bgtitlebar-margin,$s02-bgtitlebar-padding,$s02-bgtitlebar-border-top,$s02-bgtitlebar-border-right,$s02-bgtitlebar-border-bottom,$s02-bgtitlebar-border-left,$s02-bgtitlebar-border-radius,$s02-bgtitlebar-bgArgs,$s02-bgtitlebar-box-shadow,$s02-bgtitlebar-link-colors,$s02-bgtitlebar-text-dec,$s02-bgtitlebar-hover-text-dec;
+
+//.btnBar
+$s02-btnbar-color: null!default;
+$s02-btnbar-text-align: null!default;
+$s02-btnbar-text-transform: null!default;
+$s02-btnbar-text-shadow: null!default;
+$s02-btnbar-letter-spacing: null!default;
+$s02-btnbar-font-weight: null!default;
+$s02-btnbar-font-style: null!default;
+$s02-btnbar-font-variant: null!default;
+$s02-btnbar-font-size: null!default;
+$s02-btnbar-font-family: null!default;
+$s02-btnbar-line-height: null!default;
+$s02-btnbar-margin:null!default;
+$s02-btnbar-padding:null!default;
+$s02-btnbar-border-top:null!default;
+$s02-btnbar-border-right:null!default;
+$s02-btnbar-border-bottom:null!default;
+$s02-btnbar-border-left:null!default;
+$s02-btnbar-border-radius:null!default;
+$s02-btnbar-bgArgs:null!default;
+$s02-btnbar-box-shadow:null!default;
+$s02-btnbar-link-colors:null!default;
+$s02-btnbar-text-dec:null!default;
+$s02-btnbar-hover-text-dec:null!default;
+
+$s02-btnbar-args: $s02-btnbar-color,$s02-btnbar-text-align,$s02-btnbar-text-transform,$s02-btnbar-text-shadow,$s02-btnbar-letter-spacing,$s02-btnbar-font-weight,$s02-btnbar-font-style,$s02-btnbar-font-variant,$s02-btnbar-font-size,$s02-btnbar-font-family,$s02-btnbar-line-height,$s02-btnbar-margin,$s02-btnbar-padding,$s02-btnbar-border-top,$s02-btnbar-border-right,$s02-btnbar-border-bottom,$s02-btnbar-border-left,$s02-btnbar-border-radius,$s02-btnbar-bgArgs,$s02-btnbar-box-shadow,$s02-btnbar-link-colors,$s02-btnbar-text-dec,$s02-btnbar-hover-text-dec;
+
+//.paging
+$s02-paging-margin:null!default;
+$s02-paging-padding:null!default;
+$s02-paging-border-top:null!default;
+$s02-paging-border-right:null!default;
+$s02-paging-border-bottom:null!default;
+$s02-paging-border-left:null!default;
+$s02-paging-border-radius:null!default;
+$s02-paging-bgArgs:null!default;
+$s02-paging-box-shadow:null!default;
+$s02-paging-args:$s02-paging-margin,$s02-paging-padding,$s02-paging-border-top,$s02-paging-border-right,$s02-paging-border-bottom,$s02-paging-border-left,$s02-paging-border-radius,$s02-paging-bgArgs,$s02-paging-box-shadow;
+
+//  ul.PagerList
+$s02-pager-list-margin:null!default;
+$s02-pager-list-padding:null!default;
+$s02-pager-list-border-top:null!default;
+$s02-pager-list-border-right:null!default;
+$s02-pager-list-border-bottom:null!default;
+$s02-pager-list-border-left:null!default;
+$s02-pager-list-border-radius:null!default;
+$s02-pager-list-bgArgs:null!default;
+$s02-pager-list-box-shadow:null!default;
+$s02-pager-list-args:$s02-pager-list-margin,$s02-pager-list-padding,$s02-pager-list-border-top,$s02-pager-list-border-right,$s02-pager-list-border-bottom,$s02-pager-list-border-left,$s02-pager-list-border-radius,$s02-pager-list-bgArgs,$s02-pager-list-box-shadow;
+//    .PagerNav 
+
+//      a 
+$s02-pager-nav-link-link-colors:null!default;
+$s02-pager-nav-link-text-dec:null!default;
+$s02-pager-nav-link-hover-text-dec:null!default;
+$s02-pager-nav-link-args:$s02-pager-nav-link-link-colors,$s02-pager-nav-link-text-dec,$s02-pager-nav-link-hover-text-dec;
+
+
+//		.PagerSelected a
+$s02-pager-nav-selected-link-colors:null!default;
+$s02-pager-nav-selected-text-dec:null!default;
+$s02-pager-nav-selected-hover-text-dec:null!default;
+$s02-pager-nav-selected-args:$s02-pager-nav-selected-link-colors,$s02-pager-nav-selected-text-dec,$s02-pager-nav-selected-hover-text-dec;
+
+
+//.entry-section 
+$s02-entry-section-margin:null!default;
+
+//.rowEven
+$s02-row-even-margin:null!default;
+$s02-row-even-padding:null!default;
+$s02-row-even-border-top:null!default;
+$s02-row-even-border-right:null!default;
+$s02-row-even-border-bottom:null!default;
+$s02-row-even-border-left:null!default;
+$s02-row-even-border-radius:null!default;
+$s02-row-even-bgArgs:null!default;
+$s02-row-even-box-shadow:null!default;
+$s02-row-even-args:$s02-row-even-margin,$s02-row-even-padding,$s02-row-even-border-top,$s02-row-even-border-right,$s02-row-even-border-bottom,$s02-row-even-border-left,$s02-row-even-border-radius,$s02-row-even-bgArgs,$s02-row-even-box-shadow;
+
+
+//.rowOdd
+$s02-row-odd-margin:null!default;
+$s02-row-odd-padding:null!default;
+$s02-row-odd-border-top:null!default;
+$s02-row-odd-border-right:null!default;
+$s02-row-odd-border-bottom:null!default;
+$s02-row-odd-border-left:null!default;
+$s02-row-odd-border-radius:null!default;
+$s02-row-odd-bgArgs:null!default;
+$s02-row-odd-box-shadow:null!default;
+$s02-row-odd-args:$s02-row-odd-margin,$s02-row-odd-padding,$s02-row-odd-border-top,$s02-row-odd-border-right,$s02-row-odd-border-bottom,$s02-row-odd-border-left,$s02-row-odd-border-radius,$s02-row-odd-bgArgs,$s02-row-odd-box-shadow;
+
+//!Skin 02 Skin Styles
+
+//!skin - article
+$s02-color: null!default;
+$s02-text-align: null!default;
+$s02-text-transform: null!default;
+$s02-text-shadow: null!default;
+$s02-letter-spacing: null!default;
+$s02-font-weight: null!default;
+$s02-font-style: null!default;
+$s02-font-variant: null!default;
+$s02-font-size: null!default;
+$s02-font-family: null!default;
+$s02-line-height: null!default;
+$s02-margin:null!default;
+$s02-padding:null!default;
+$s02-border-top:null!default;
+$s02-border-right:null!default;
+$s02-border-bottom:null!default;
+$s02-border-left:null!default;
+$s02-border-radius:null!default;
+$s02-bgArgs:null!default;
+$s02-box-shadow:null!default;
+$s02-link-colors:null!default;
+$s02-text-dec:null!default;
+$s02-hover-text-dec:null!default;
+
+$s02-args: $s02-color,$s02-text-align,$s02-text-transform,$s02-text-shadow,$s02-letter-spacing,$s02-font-weight,$s02-font-style,$s02-font-variant,$s02-font-size,$s02-font-family,$s02-line-height,$s02-margin,$s02-padding,$s02-border-top,$s02-border-right,$s02-border-bottom,$s02-border-left,$s02-border-radius,$s02-bgArgs,$s02-box-shadow,$s02-link-colors,$s02-text-dec,$s02-hover-text-dec;
+
+//article > header
+$s02-header-color: null!default;
+$s02-header-text-align: null!default;
+$s02-header-text-transform: null!default;
+$s02-header-text-shadow: null!default;
+$s02-header-letter-spacing: null!default;
+$s02-header-font-weight: null!default;
+$s02-header-font-style: null!default;
+$s02-header-font-variant: null!default;
+$s02-header-font-size: null!default;
+$s02-header-font-family: null!default;
+$s02-header-line-height: null!default;
+$s02-header-margin:null!default;
+$s02-header-padding:null!default;
+$s02-header-border-top:null!default;
+$s02-header-border-right:null!default;
+$s02-header-border-bottom:null!default;
+$s02-header-border-left:null!default;
+$s02-header-border-radius:null!default;
+$s02-header-bgArgs:null!default;
+$s02-header-box-shadow:null!default;
+$s02-header-link-colors:null!default;
+$s02-header-text-dec:null!default;
+$s02-header-hover-text-dec:null!default;
+
+$s02-header-args: $s02-header-color,$s02-header-text-align,$s02-header-text-transform,$s02-header-text-shadow,$s02-header-letter-spacing,$s02-header-font-weight,$s02-header-font-style,$s02-header-font-variant,$s02-header-font-size,$s02-header-font-family,$s02-header-line-height,$s02-header-margin,$s02-header-padding,$s02-header-border-top,$s02-header-border-right,$s02-header-border-bottom,$s02-header-border-left,$s02-header-border-radius,$s02-header-bgArgs,$s02-header-box-shadow,$s02-header-link-colors,$s02-header-text-dec,$s02-header-hover-text-dec;
+
+//!article > header > h2
+$s02-h2-color: null!default;
+$s02-h2-text-align: null!default;
+$s02-h2-text-transform: null!default;
+$s02-h2-text-shadow: null!default;
+$s02-h2-letter-spacing: null!default;
+$s02-h2-font-weight: null!default;
+$s02-h2-font-style: null!default;
+$s02-h2-font-variant: null!default;
+$s02-h2-font-size: null!default;
+$s02-h2-font-family: null!default;
+$s02-h2-line-height: null!default;
+$s02-h2-margin:null!default;
+$s02-h2-padding:null!default;
+$s02-h2-border-top:null!default;
+$s02-h2-border-right:null!default;
+$s02-h2-border-bottom:null!default;
+$s02-h2-border-left:null!default;
+$s02-h2-border-radius:null!default;
+$s02-h2-bgArgs:null!default;
+$s02-h2-box-shadow:null!default;
+$s02-h2-link-colors:null!default;
+$s02-h2-text-dec:null!default;
+$s02-h2-hover-text-dec:null!default;
+
+$s02-h2-args: $s02-h2-color,$s02-h2-text-align,$s02-h2-text-transform,$s02-h2-text-shadow,$s02-h2-letter-spacing,$s02-h2-font-weight,$s02-h2-font-style,$s02-h2-font-variant,$s02-h2-font-size,$s02-h2-font-family,$s02-h2-line-height,$s02-h2-margin,$s02-h2-padding,$s02-h2-border-top,$s02-h2-border-right,$s02-h2-border-bottom,$s02-h2-border-left,$s02-h2-border-radius,$s02-h2-bgArgs,$s02-h2-box-shadow,$s02-h2-link-colors,$s02-h2-text-dec,$s02-h2-hover-text-dec;
+
+//!skin nav
+
+$s02-nav-color: null!default;
+$s02-nav-text-align: null!default;
+$s02-nav-text-transform: null!default;
+$s02-nav-text-shadow: null!default;
+$s02-nav-letter-spacing: null!default;
+$s02-nav-font-weight: null!default;
+$s02-nav-font-style: null!default;
+$s02-nav-font-variant: null!default;
+$s02-nav-font-size: null!default;
+$s02-nav-font-family: null!default;
+$s02-nav-line-height: null!default;
+$s02-nav-margin:null!default;
+$s02-nav-padding:null!default;
+$s02-nav-border-top:null!default;
+$s02-nav-border-right:null!default;
+$s02-nav-border-bottom:null!default;
+$s02-nav-border-left:null!default;
+$s02-nav-border-radius:null!default;
+$s02-nav-bgArgs:null!default;
+$s02-nav-box-shadow:null!default;
+$s02-nav-link-colors:null!default;
+$s02-nav-text-dec:null!default;
+$s02-nav-hover-text-dec:null!default;
+
+$s02-nav-args: $s02-nav-color,$s02-nav-text-align,$s02-nav-text-transform,$s02-nav-text-shadow,$s02-nav-letter-spacing,$s02-nav-font-weight,$s02-nav-font-style,$s02-nav-font-variant,$s02-nav-font-size,$s02-nav-font-family,$s02-nav-line-height,$s02-nav-margin,$s02-nav-padding,$s02-nav-border-top,$s02-nav-border-right,$s02-nav-border-bottom,$s02-nav-border-left,$s02-nav-border-radius,$s02-nav-bgArgs,$s02-nav-box-shadow,$s02-nav-link-colors,$s02-nav-text-dec,$s02-nav-hover-text-dec;
+
+
+$s02-nav-clear: yes!default;
+$s02-nav-float-direction: left!default;
+
+//!skin nav links
+$s02-nav-link-link-colors:null!default;
+$s02-nav-link-text-dec:null!default;
+$s02-nav-link-hover-text-dec:null!default;
+$s02-nav-link-args:$s02-nav-link-link-colors,$s02-nav-link-text-dec,$s02-nav-link-hover-text-dec;
+
+$s02-nav-link-spacing: null!default;
+
+//skin nav footer
+$s02-nav-footer-float-direction: left!default;
+$s02-nav-footer-link-link-colors:null!default;
+$s02-nav-footer-link-text-dec:null!default;
+$s02-nav-footer-link-hover-text-dec:null!default;
+
+$s02-nav-footer-link-spacing: null!default;
+
+//skin-content
+$s02-content-color: null!default;
+$s02-content-text-align: null!default;
+$s02-content-text-transform: null!default;
+$s02-content-text-shadow: null!default;
+$s02-content-letter-spacing: null!default;
+$s02-content-font-weight: null!default;
+$s02-content-font-style: null!default;
+$s02-content-font-variant: null!default;
+$s02-content-font-size: null!default;
+$s02-content-font-family: null!default;
+$s02-content-line-height: null!default;
+$s02-content-margin:null!default;
+$s02-content-padding:null!default;
+$s02-content-border-top:null!default;
+$s02-content-border-right:null!default;
+$s02-content-border-bottom:null!default;
+$s02-content-border-left:null!default;
+$s02-content-border-radius:null!default;
+$s02-content-bgArgs:null!default;
+$s02-content-box-shadow:null!default;
+$s02-content-link-colors:null!default;
+$s02-content-text-dec:null!default;
+$s02-content-hover-text-dec:null!default;
+
+$s02-content-args: $s02-content-color,$s02-content-text-align,$s02-content-text-transform,$s02-content-text-shadow,$s02-content-letter-spacing,$s02-content-font-weight,$s02-content-font-style,$s02-content-font-variant,$s02-content-font-size,$s02-content-font-family,$s02-content-line-height,$s02-content-margin,$s02-content-padding,$s02-content-border-top,$s02-content-border-right,$s02-content-border-bottom,$s02-content-border-left,$s02-content-border-radius,$s02-content-bgArgs,$s02-content-box-shadow,$s02-content-link-colors,$s02-content-text-dec,$s02-content-hover-text-dec;

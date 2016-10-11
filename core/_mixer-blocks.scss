@@ -1,0 +1,99 @@
+// BUILDING BLOCK MIXINS
+//--------------------------------------------
+
+@mixin propSwitch ($attr:null,$val:null){
+	@if $val == null or $attr == null{
+	} @else if $attr == box-shadow {
+		@include box-shadow($val);
+	} @else if $attr == border-radius {
+		@include border-radius($val);	 
+	} @else {
+		#{$attr}:$val;
+	}
+}
+
+@mixin bgType ($bgArgs...) {
+	@if $bgArgs == null {
+	} @else if nth($bgArgs,1) == solid {
+		background: nth($bgArgs,2);
+	} @else if nth($bgArgs,1) == two {
+		background: nth($bgArgs,2), nth($bgArgs,3);
+	} @else if nth($bgArgs,1) == three {
+		background: nth($bgArgs,2), nth($bgArgs,3), nth($bgArgs,4);
+	} @else if nth($bgArgs,1) == vgrad {
+		@include gradient-vertical(nth($bgArgs,2), nth($bgArgs,3));
+	} @else if nth($bgArgs,1) == hgrad {
+		@include gradient-horizontal(nth($bgArgs,2), nth($bgArgs,3));
+	} @else if nth($bgArgs,1) == diag {
+		@include gradient-directional(nth($bgArgs,2), nth($bgArgs,3),nth($bgArgs,4));
+	} @else if nth($bgArgs,1) == v3 {
+		@include gradient-vertical-three-colors(nth($bgArgs,2), nth($bgArgs,3),nth($bgArgs,4));
+	} @else if nth($bgArgs,1) == radial {
+		@include gradient-radial(nth($bgArgs,2), nth($bgArgs,3));
+	} @else if nth($bgArgs,1) == stripe {
+		@include gradient-striped(nth($bgArgs,2), nth($bgArgs,3),nth($bgArgs,4));
+	}
+}
+
+// Typography and Link related properties list
+//--------------------------------------------
+
+// Inline / Typography Attributes
+//--------------------------------------------
+@mixin typeAttr($color:null,$text-align:null,$text-transform:null,$text-shadow:null,$letter-spacing:null,$font-weight:null,$font-style:null,$font-variant:null,$font-size:null,$font-family:null,$line-height:null) {
+	color:$color;
+	text-align:$text-align;
+	text-transform:$text-transform;
+	text-shadow:$text-shadow;
+	letter-spacing:$letter-spacing;
+	font-weight:$font-weight;
+	font-style:$font-style;
+	font-variant:$font-variant;
+	font-size:$font-size;
+	font-family:$font-family;
+	line-height:$line-height;
+}
+
+
+// Block Level Attributes
+//--------------------------------------------
+
+@mixin blockAttr($margin:null,$padding:null,$border-top:null,$border-right:null,$border-bottom:null,$border-left:null,$border-radius:null,$bgArgs:null,$box-shadow:null){
+	margin:$margin;
+	padding:$padding;
+	border-top:$border-top;
+	border-right:$border-right;
+	border-bottom:$border-bottom;
+	border-left:$border-left;
+	@include propSwitch (border-radius,$border-radius);
+	@include bgType ($bgArgs...);
+	@include propSwitch (box-shadow,$box-shadow);
+	
+}
+
+@mixin linkAttr($link-colors:null,$text-decoration:null,$hover-text-decoration:null) {
+	@include link-colors($link-colors...);
+		text-decoration: $text-decoration;
+		&:hover{
+			text-decoration: $hover-text-decoration;
+		}
+}
+
+@mixin allAttr($color:null,$text-align:null,$text-transform:null,$text-shadow:null,$letter-spacing:null,$font-weight:null,$font-style:null,$font-variant:null,$font-size:null,$font-family:null,$line-height:null,$margin:null,$padding:null,$border-top:null,$border-right:null,$border-bottom:null,$border-left:null,$border-radius:null,$bgArgs:null,$box-shadow:null,$link-colors:null,$text-decoration:null,$hover-text-decoration:null){
+	@include typeAttr($color,$text-align,$text-transform,$text-shadow,$letter-spacing,$font-weight,$font-style,$font-variant,$font-size,$font-family,$line-height);
+	@include blockAttr($margin,$padding,$border-top,$border-right,$border-bottom,$border-left,$border-radius,$bgArgs,$box-shadow);
+	a{
+		@include link-colors($link-colors...);
+		text-decoration: $text-decoration;
+		&:hover{
+			text-decoration: $hover-text-decoration;
+		}
+	}
+}
+
+@mixin clear-element ($y){
+	@if $y != null {
+		@include clearfix;
+		clear:both;	
+	}
+}

@@ -1,0 +1,318 @@
+@mixin controlStyles(
+$title-args:$title-args,
+$subtitle-args:$subtitle-args,
+$teasertitle-args:$teasertitle-args,
+$teaserlist-title-font-size:$teaserlist-title-font-size,
+$teaserlist-subtitle-font-size:$teaserlist-subtitle-font-size,
+$dim-args:$dim-args,
+$lit-color:$lit-color,
+$mini-font-size:$mini-font-size,
+$micro-font-size:$micro-font-size,
+$readmore-args:$readmore-args,
+$readmore-link-colors:$readmore-link-colors,
+$readmore-text-dec:$readmore-text-dec,
+$readmore-hover-text-dec:$readmore-hover-text-dec,
+$bgtitlebar-args:$bgtitlebar-args,
+$btnbar-args:$btnbar-args,
+$entry-section-margin:$entry-section-margin,
+$paging-args:$paging-args,
+$pager-list-args:$pager-list-args,
+$pager-nav-link-link-colors:$pager-nav-link-link-colors,
+$pager-nav-link-text-dec:$pager-nav-link-text-dec,
+$pager-nav-link-hover-text-dec:$pager-nav-link-hover-text-dec,
+$pager-nav-selected-link-colors:$pager-nav-selected-link-colors,
+$pager-nav-selected-text-dec:$pager-nav-selected-text-dec,
+$pager-nav-selected-hover-text-dec:$pager-nav-selected-hover-text-dec,
+$row-odd-args:$row-odd-args,
+$row-even-args:$row-even-args){
+	//---------------------- .title
+	.title, .largeheader, .header,
+	.cr h2,	div h2.dark, .podcastTitle,
+	.closings h2.accent, .episodeTitle {
+		@include allAttr($title-args...);	
+	}
+	//---------------------- .subtitle
+	.subheader, .episodeTitle,
+	.subtitle {@include allAttr($subtitle-args...);}
+	//---------------------- .teasertitle
+	
+	.teasertitle,.miniheader,.rmheader {@include typeAttr($teasertitle-args...);}
+	
+	//-------- .teaserList ETC
+	.blogs.teaser.headlines, .teaserList, .teaserList li, li {
+	  .title {
+		  @include propSwitch(font-size, $teaserlist-title-font-size);
+	  }
+	  .subtitle {
+		@include propSwitch(font-size, $teaserlist-subtitle-font-size);
+	  }
+	}
+	.photogallery.teaser.aggregated h5 {
+	  	 @include propSwitch(font-size, $teaserlist-title-font-size);
+	}
+	
+	// .dim - meta information
+	.dim, .minidim, .microdim, .minidimheader, .caption, .miniheader, .sblabel, .rmheader, .minidimheader, .dark, .description {@include typeAttr($dim-args...);}
+	
+	.miniheader, .sblabel, .rmheader, .minidimheader {
+		
+	}
+	
+	.lit, .minilit {
+		color:$lit-color;
+	}
+	
+	// Small Text
+	
+	.txtMini, .mini {
+		@include propSwitch(font-size, $mini-font-size);
+	}
+	
+	.txtMicro, .micro, .microdim {
+		@include propSwitch(font-size, $micro-font-size);
+	}
+	
+	.alert, .req, .required, .error {
+	  //These are set only once - independent of skin color!
+	}
+	
+	// read more links
+	
+	.readMore, .readmore, .moreLink {
+		@include typeAttr($readmore-args...);
+	  a {
+		@include linkAttr($link-colors:$readmore-link-colors,$text-decoration:$readmore-text-dec,$hover-text-decoration:$readmore-hover-text-dec);
+	  }
+	}
+	
+	a.readMore, a.readmore, a.jumperlink, a.rmjumperlink, a.miniheaderlink {
+		@include linkAttr($link-colors:$readmore-link-colors,$text-decoration:$readmore-text-dec,$hover-text-decoration:$readmore-hover-text-dec);
+	}
+	.control {
+		.bgTitleBar {
+			@include allAttr($bgtitlebar-args...);
+		}
+		
+		.btnBar,.tabbedNavList {
+			@include allAttr($btnbar-args...);
+		}
+		
+		// Pagination Control
+		.paging {
+		@include blockAttr($paging-args...);
+		  ul.PagerList {
+		  	@include blockAttr($pager-list-args...);
+		    .PagerNav {
+		      a {
+			      @include linkAttr($link-colors:$pager-nav-link-link-colors,$text-decoration:$pager-nav-link-text-dec,$hover-text-decoration:$pager-nav-link-hover-text-dec);
+		      }
+		      &.PagerSelected a {
+			      @include linkAttr($link-colors:$pager-nav-selected-link-colors,$text-decoration:$pager-nav-selected-text-dec,$hover-text-decoration:$pager-nav-selected-hover-text-dec);
+		      }
+		      //.PagerNotSelected a inherits overall link style
+		    }
+		  }
+		}
+		
+		//Structure - based on Feeds public controls
+		.entry-section {
+			margin:$entry-section-margin;
+		}
+		
+		//Icons
+		.icon {}
+		
+		//----------------------ALTERNATING ROWS
+		
+		.rowOdd, .sbtrdef, .trdef, .defined, .default {
+			@include blockAttr($row-odd-args...);
+		}
+		
+		.rowEven, .sbtralt, .tralt, .alt, .alternating {
+			@include blockAttr($row-even-args...);
+		}
+	
+		}
+	} //End controlStyles mixin
+
+
+//--------------- Buttons
+.control {
+  a.btnGo, input.btnGo, input.buttonGo {
+	  
+  }
+  input.btn_submit, a.btn_submit,
+  input.btnSubmit, a.btnSubmit {
+	  
+  }
+
+  //--------  Control-specific */
+  [class*=hdiv][style] {
+    height: 1px !important;
+    overflow: hidden;
+  }
+  //-------- Concerts & Events */
+  .control.calendar.upcoming td.dim.date:after {
+    content: ' \B7';
+  }
+  div.control.upcoming.concerts, div.control.upcoming.concerts table td {
+    font-size: 1em;
+  }
+  .concerts_teaser a:hover h1 {
+    text-decoration: underline;
+  }
+  div.calendar.details > img.thumb {
+    width: 100px;
+  }
+  div.calendar.details > img + .title, div.calendar.details > img + .title ~ dl, div.calendar.details > img + .title ~ .description {
+    margin-left: 112px;
+  }
+  div.concerts_teaser .metadata {
+    font-size: 1em;
+    line-height: inherit;
+  }
+  div.concerts_teaser h1.caps.accent {
+    text-transform: none;
+  }
+  // Polls */
+  img[src='/EI/T/Images/Poll/poll_shade.gif'] {
+    margin: .25em 0;
+  }
+  .button_poll a {
+    cursor: pointer;
+  }
+  // Contests */
+  [id$=lblContestDescription] + br {
+    display: none;
+  }
+  // Podcasts */
+  div.podcasts .podcastLinks li.rss {
+    text-align: left;
+  }
+  // Photo Galleries */
+  div.photogallery.teaser .caption > a[id$=lnkAlbum] {
+    display: inline;
+  }
+  //.photogallery.teaser.singlegallery li  {padding-left:0!important;} //Thumbnails left aligned with text*/
+  .photogallery.teaser.singlegallery li + li {
+    padding-left: 6px!important;
+  }
+  // Control Specific
+  // Channels
+  .feedHome > .entry {
+    /*background-image:none !important; Gets rid of dividers*/
+  }
+  // Concerts & Events
+  .calendar {
+    td.date {
+      width: 1px;
+    }
+    &.upcoming td.dim.date:after {
+      content: ' \B7';
+    }
+    &.details > img.thumb {
+      width: 100px;
+    }
+  }
+  .upcoming.concerts {
+    table td {
+      font-size: 1em;
+    }
+  }
+  .concerts_teaser a:hover h1 {
+    text-decoration: underline;
+  }
+  div.calendardiv.calendar.details > img + .title, div.calendar.details > img + .title ~ dl, div.calendar.details > img + .title ~ .description {
+    margin-left: 112px;
+  }
+  div.concerts_teaser .metadata {
+    font-size: 1em;
+    line-height: inherit;
+  }
+  div.concerts_teaser h1.caps.accent {
+    text-transform: none;
+  }
+  //div.detailListings address .websiteURL {word-break: break-all; word-wrap: break-word; max-width: 300px;}
+  // Polls
+  img[src='/EI/T/Images/Poll/poll_shade.gif'] {
+    margin: .25em 0;
+  }
+  .button_poll a {
+    cursor: pointer;
+  }
+  // Contests
+  [id$=lblContestDescription] + br {
+    display: none;
+  }
+  // Podcasts
+  .podcasts {
+  	.container {
+	    width: auto!important;
+	  }
+    .podcastLinks {}
+    .podcastLinks li.rss {
+      text-align: left;
+    }
+  }
+}
+@include controlStyles;
+
+.s01-alt {
+	@include controlStyles(
+$title-args:$s01alt-title-args,
+$subtitle-args:$s01alt-subtitle-args,
+$teasertitle-args:$s01alt-teasertitle-args,
+$teaserlist-title-font-size:$s01alt-teaserlist-title-font-size,
+$teaserlist-subtitle-font-size:$s01alt-teaserlist-subtitle-font-size,
+$dim-args:$s01alt-dim-args,
+$lit-color:$s01alt-lit-color,
+$mini-font-size:$s01alt-mini-font-size,
+$micro-font-size:$s01alt-micro-font-size,
+$readmore-args:$s01alt-readmore-args,
+$readmore-link-colors:$s01alt-readmore-link-colors,
+$readmore-text-dec:$s01alt-readmore-text-dec,
+$readmore-hover-text-dec:$s01alt-readmore-hover-text-dec,
+$bgtitlebar-args:$s01alt-bgtitlebar-args,
+$btnbar-args:$s01alt-btnbar-args,
+$entry-section-margin:$s01alt-entry-section-margin,
+$paging-args:$s01alt-paging-args,
+$pager-list-args:$s01alt-pager-list-args,
+$pager-nav-link-link-colors:$s01alt-pager-nav-link-link-colors,
+$pager-nav-link-text-dec:$s01alt-pager-nav-link-text-dec,
+$pager-nav-link-hover-text-dec:$s01alt-pager-nav-link-hover-text-dec,
+$pager-nav-selected-link-colors:$s01alt-pager-nav-selected-link-colors,
+$pager-nav-selected-text-dec:$s01alt-pager-nav-selected-text-dec,
+$pager-nav-selected-hover-text-dec:$s01alt-pager-nav-selected-hover-text-dec,
+$row-odd-args:$s01alt-row-odd-args,
+$row-even-args:$s01alt-row-even-args)
+}
+
+.s02 {
+		@include controlStyles(
+$title-args:$s02-title-args,
+$subtitle-args:$s02-subtitle-args,
+$teasertitle-args:$s02-teasertitle-args,
+$teaserlist-title-font-size:$s02-teaserlist-title-font-size,
+$teaserlist-subtitle-font-size:$s02-teaserlist-subtitle-font-size,
+$dim-args:$s02-dim-args,
+$lit-color:$s02-lit-color,
+$mini-font-size:$s02-mini-font-size,
+$micro-font-size:$s02-micro-font-size,
+$readmore-args:$s02-readmore-args,
+$readmore-link-colors:$s02-readmore-link-colors,
+$readmore-text-dec:$s02-readmore-text-dec,
+$readmore-hover-text-dec:$s02-readmore-hover-text-dec,
+$bgtitlebar-args:$s02-bgtitlebar-args,
+$btnbar-args:$s02-btnbar-args,
+$entry-section-margin:$s02-entry-section-margin,
+$paging-args:$s02-paging-args,
+$pager-list-args:$s02-pager-list-args,
+$pager-nav-link-link-colors:$s02-pager-nav-link-link-colors,
+$pager-nav-link-text-dec:$s02-pager-nav-link-text-dec,
+$pager-nav-link-hover-text-dec:$s02-pager-nav-link-hover-text-dec,
+$pager-nav-selected-link-colors:$s02-pager-nav-selected-link-colors,
+$pager-nav-selected-text-dec:$s02-pager-nav-selected-text-dec,
+$pager-nav-selected-hover-text-dec:$s02-pager-nav-selected-hover-text-dec,
+$row-odd-args:$s02-row-odd-args,
+$row-even-args:$s02-row-even-args);
+}

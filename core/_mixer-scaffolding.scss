@@ -1,0 +1,158 @@
+body {
+	@include allAttr($body-args...);
+	font-size: $base-font-size;
+	a{
+		@include transition-property($base-transition-properties);
+		@include transition-duration($base-transition-duration);
+	}	
+}
+
+// Basic Site Structure
+// ----------
+
+#siteheader {
+	@include clearfix();
+	@include allAttr($siteheader-args...);
+	.container {
+		@include allAttr($siteheader-cnt-args...);
+		width:$site-width-padded;
+	}
+	.content-area {margin-top: 0;}
+	.logo {
+		@include blockAttr($header-logo-args...);
+		display:$header-logo-display;
+		float: $header-logo-float;
+	}
+}
+
+#sitecontent {
+	@include allAttr($sitecontent-args...);
+	> .container {
+		@include allAttr($sitecontent-cnt-args...);
+		width:$thisSiteWidth;
+		@include grid-core($thisSiteWidth,$gridGutterWidth,0);
+		
+		@each $width in grid_sbA $sbWidthA, grid_sbB $sbWidthB {
+			@if nth($width,2) != null {
+				&.#{nth($width,1)} {
+			    @include grid-core($thisSiteWidth,$gridGutterWidth,nth($width,2));
+			  }
+			} 	  
+		}
+		.main{
+			@include blockAttr($main-args...);
+		}
+	}
+	.sidebar {
+		@include blockAttr($sidebar-args...)
+	}
+	.content-area {
+		@include blockAttr($content-area-args...)
+	}
+}
+
+#sitefooter {
+	@include clearfix;
+	@include allAttr($sitefooter-args...);
+	overflow: $sitefooter-overflow;
+	.container{
+		@include allAttr($sitefooter-cnt-args...);
+		width:$site-width-padded;
+	}
+	.content-area {margin-top: 0;}
+	
+	hr {
+		@include blockAttr($sitefooter-hr-args...);
+	}
+	.logo {
+		@include blockAttr($sitefooter-logo-args...);
+		@include propSwitch (float,$sitefooter-logo-float);
+	}
+	.link-list {
+		list-style: $sitefooter-linklist-style;
+		@include allAttr($sitefooter-linklist-args...);
+		@include propSwitch (float,$sitefooter-linklist-float);
+		width: $sitefooter-linklist-width;
+		li {
+			@include blockAttr($sitefooter-linklist-item-args...);
+			a {
+				@include blockAttr($sitefooter-linklist-link-args...);
+				@include linkAttr($link-colors:$sitefooter-linklist-link-link-colors,$text-decoration:$sitefooter-linklist-link-text-dec,$hover-text-decoration:$sitefooter-linklist-link-hover-text-dec);
+			}
+		}
+	}
+	.mi-copyright{
+		@include opacity($sitefooter-copyright-opacity);
+		display: block;
+		@include propSwitch (float,$sitefooter-copyright-float);
+		@include allAttr($sitefooter-copyright-args...);	
+	}
+	.logo-mi {
+		@include blockAttr($sitefooter-mi-args...);
+		@include propSwitch (float,$sitefooter-mi-float);
+	}
+	.social {
+		@include blockAttr($sitefooter-social-args...);
+		@include propSwitch (float,$sitefooter-social-float);
+	}
+	
+}
+
+h1 {
+font-size:2.8em;
+line-height:1.1em
+}
+
+h2 {
+font-size:2.24em;
+line-height:1.2em
+}
+
+h3 {
+font-size:1.8em;
+line-height:1.4em
+}
+
+h4 {
+font-size:1.4em;
+line-height:1.6em
+}
+
+h5 {
+font-size:1.2em;
+line-height:1.4em
+}
+
+h6 {
+font-size:1em;
+line-height:1.1em
+}
+
+p {
+margin:0 0 .2em
+}
+
+ 
+
+//RTE Styles
+
+.image_align_center {
+	display:block;
+	margin:0 auto;
+	clear:both;
+	}
+.image_align_top_left	{
+	display:block;
+	float: left;
+	margin: 0 12px 12px 0;
+	}
+.image_align_top_right {
+	display:block;
+	float: right;
+	margin: 0 12px 0 12px;
+	}
+.image_no_text_wrap {
+	display:block;
+	margin:0 0 12px 0;
+	clear:both;
+	}
